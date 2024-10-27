@@ -58,7 +58,7 @@
               </details>
               <details>
                 <summary>alt</summary>
-                <div>alt 속성은 </div>
+                <div>alt 속성은 정보를 더 주기 위한 속성</div>
               </details>
             <li>하이퍼링크 a</li>
         </ol>
@@ -74,28 +74,44 @@
             <ul type="circle">
                 <details>
                     <summary>button</summary>
-                    <div>button</div>
+                    <div>버튼의 type은 value로 이름 설정 가능</div>
+                    <input type="button" value="버튼">
                 </details>
                 <details>
                     <summary>text</summary>
-                    <div>text</div>
+                    <div>text는 placeholder로 내용 설정가능,
+                      문구와 칸이랑 연동 필요시, label을 사용해서 진행</div>
+                    <label for="text">텍스트 칸<input type="text" id="text" /></label>
                 </details>
                 <details>
                     <summary>email</summary>
-                    <div>email</div>
+                    <div>email은 이메일 작성 칸을 만드는 것, placeholder를 통해 예시문구 작성 가능</div>
+                    <label for="emailID">email
+                      <input type="email" id="emailID" placeholder="example@naver.com">
+                    </label>
                 </details>
                 <details>
                     <summary>password</summary>
-                    <div>password</div>
+                    <div>password는 암호 작성 칸 만들기</div>
+                    <label for="pw">password
+                      <input type="password" id="pw" placeholder="8~12개 숫자 및 영어">
+                    </label>
                 </details>
                 <details>
                     <summary>checkbox</summary>
-                    <div>checkbox</div>
+                    <div>checkbox는 여러 선택사항 선택 가능</div>
+                    <label><input type="checkbox" name="input" id="choose">어느</label>
+                    <label><input type="checkbox" name="input" id="choose">것을</label>
+                    <label><input type="checkbox" name="input" id="choose">선택</label>
                 </details>
                 <details>
-                    <summary>radio</summary>
-                    <div>radio</div>
+                  <summary>radio</summary>
+                  <div>radio는 하나만 선택가능</div>
+                  <label><input type="radio" name="input" id="one">하나</label>
+                  <label><input type="radio" name="input" id="one">만</label>
+                  <label><input type="radio" name="input" id="one">선택</label>
                 </details>
+                  
             </ul>
         </ol>
     </ul>
