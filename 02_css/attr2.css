@@ -1,0 +1,42 @@
+/* body{
+    background-color: pink;
+} */
+
+.d-block{
+    display: block;
+    background-color: aquamarine;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+
+    /* 여백 적용,padding은 내부 여백, margin은 외부 여백 */
+    padding: 10px;
+    margin: 10px;
+}
+.d-inline{
+    display: inline;
+    background-color: burlywood;
+    border: 1px solid blue;
+    /* inline은 가로세로 적용 안됨 */
+    width: 100px;
+    height: 100px;
+
+    /* 여백 적용 */
+    /* padding 위아래 배경색만 적용 */
+    padding: 10px;
+    margin: 10px;
+}
+
+.d-inline-block{
+    display: inline-block;
+    background-color: aliceblue;
+    border: 1px solid green;
+
+    width: 50px;
+    height: 50px;
+    font-size: 12px;
+
+    /* 여백 적용 */
+    padding: 10px;
+    margin: 10px;
+}

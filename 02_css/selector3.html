@@ -86,6 +86,27 @@
          .zoo > *:not(div){
             background-color: aqua;
          }
+
+         /* 가상요소 선택자 */
+         .div2{
+            background-color: yellowgreen;
+            font-size: 14px;
+            font-weight: bold;
+         }
+
+         .div2::after{
+            content: 'after';
+            background-color: red;
+            color: white;
+         }
+
+         .div2::before{
+            content: '';
+            background-color: green;
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+         }
     </style>
 </head>
 <body>
@@ -113,5 +134,8 @@
         <div>코알라</div>
         <li>panda</li>
      </ul>
+
+     <!-- 가상 요소 선택자 -->
+      <div class="div2">가상 요소 선택자</div>
 </body>
 </html>
