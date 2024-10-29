@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 종합 실습 - form 만들기</title>
+    <style>
+        form{
+            width: 400px;
+        }
+
+        h3:hover{
+            background-color: bisque;
+            color: brown;
+        }
+        /* focus */
+        textarea{
+            width: 100%;
+        }
+
+        textarea:focus{
+            background-color: aquamarine;
+        }
+
+        /* checked */
+        /* active */
+        input[type="checkbox"]:checked + span.red{
+            background-color: red;
+            color: white;
+        }
+
+        input[type="checkbox"]:checked + span.blue{
+            background-color: blue;
+            color: white;
+        }
+
+        input[type="checkbox"]:checked + span.yellow{
+            background-color: yellow;
+            color: black;
+        }
+
+        button{
+            float: right;
+            padding: 5px 15px;
+            background-color: #f96666;
+            color:white;
+            font-size: 17px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        button:active{
+            background-color: rgb(174, 174, 174);
+            color: #f96666;
+        }
+    </style>
+</head>
+<body>
+    <h3>건의 사항을 적어주세요</h3>
+    <form>
+        <label for="text"><textarea id="text"  cols="100" rows="10" placeholder="건의사항🎈"></textarea></label>
+        <!-- label
+          - 명시적 방식: id와 for 맞춰주기 
+          - 암시적 방식: label 내부에 input 쓰기
+              -checkbox 사용 시 명시적 방식으로 진행하기
+          -->
+              
+          <label>
+            <input type="checkbox" name="빨강" id="red">
+            <span class="red">빨강</span>
+          </label>
+          <label><input type="checkbox" name="파랑" id="blue">
+            <span class="blue">파랑</span>
+          </label>
+          <label><input type="checkbox" name="노랑" id="yellow">
+            <span class="yellow">노랑</span>
+          </label>
+          <!-- checkbox와 textarea 만들기 -->
+           <button>제출</button>
+    </form>
+</body>
+</html>
