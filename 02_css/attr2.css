@@ -40,3 +40,140 @@
     padding: 10px;
     margin: 10px;
 }
+
+.parent{
+    width: 500px;
+    height: 250px;
+    background-color: cadetblue;
+}
+
+.parent > .min{
+    min-width: 400px;
+    background-color: coral;
+    height: 100px;
+}
+
+.parent > .max{
+    max-width: 400px;
+    height: 100px;
+    background-color: rgb(158, 231, 85);
+}
+
+/* 단위 확인 */
+.box{
+    background-color: blanchedalmond;
+    border: 1px solid black;
+}
+
+.box-px{
+    width: 50px;
+    height: 50px;
+}
+
+.box-view{
+    /* 뷰포트크기에서 50% */
+    width: 50vw;
+    height: 50vh;
+}
+
+.box-per{
+    /* 부모의 기준으로 --% */
+    width: 50%;
+    height: 50%;
+}
+
+/* html 의 폰트사이즈가 1rem */
+.rem{
+    font-size: 2rem;
+}
+
+/* 부모의 폰트사이즈가 1em */
+/* em은 쓰면 쓸수록 늘어나기 때문에 사용기 주의 */
+.em{
+    font-size: 2em;
+}
+
+.square{
+    width: 100px;
+    height: 100px;
+    border: 1px solid gray;
+    display: inline-block;
+    /* 마우스를 올렸을 때 손가락 양으로 보이게 함 */
+    cursor: pointer;
+}
+
+.border{
+    /* width, style, color순으로 단축 속성 작성하면 됨 */
+    border: 1px solid black;
+    border-color: blue;
+    border-style: dotted;
+    border-width: 5px;
+
+    border-left: 2px dashed yellowgreen;
+    border-top-style: solid;
+}
+
+.rounded{
+    /* %와 px의 모형이 달라질 수 있음, px이 더 이쁘게 나옴 */
+    border-radius: 10%;
+    /* 단축속성 */
+    border-radius: 5px 10px 20px 40px;
+    border-radius: 5px 20px 50px;
+    border-radius: 5px 50px;
+}
+
+.box-sizing{
+    border: 15px solid red;
+    padding: 20px;
+    background-color: yellow;
+}
+
+.content-box{
+    box-sizing: content-box;
+}
+
+/* border-box를 사용해야 원하는 width와 height를 지키는 방식으로 나옴 */
+.border-box{
+    box-sizing: border-box;
+}
+
+/* 실습 - 모습 안보이게 하기 */
+.d-none {
+    display: none;
+    background-color: red;
+    }
+    
+    .invisible {
+    /* visibility: hidden; */
+    background-color: orangered;
+    }
+    
+    .opacity-0 {
+    /* opacity: 0; */
+    background-color: tomato;
+    }
+   
+/* overflow연습 */
+.square > img[alt='pooh사진']{
+    width: 200px;
+}
+
+.overflow-hidden{
+    overflow: hidden;
+}
+
+.overflow-auto{
+    overflow: auto;
+}
+
+.overflow-scroll{
+    overflow: scroll;
+}
+
+.overflow-visible{
+    overflow: visible;
+    /* 단축속성
+    overflow-x: hidden;
+    overflow-y: auto; */
+    overflow: hidden auto;
+}

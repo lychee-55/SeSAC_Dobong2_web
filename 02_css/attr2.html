@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>기본 속성</title>
     <link rel="stylesheet" href="./attr2.css">
+    
 </head>
+<!-- bocy의 height를 지정하면 그에 맞춰 자식요소의 %가 지정됨. -->
 <body>
+    
     <h2>display 속성</h2>
     <!-- div.d-block*4{block $} -->
     <div class="d-block">block 1</div>
@@ -24,5 +27,66 @@
     <span class="d-inline-block">inline-block 1</span>
     <span class="d-inline-block">inline-block 2</span>
     <span class="d-inline-block">inline-block 3</span>
+
+    <h2>max-width, min-width</h2>
+    <div class="parent">
+        <!-- min는 지정한 수 이상 -->
+        <div class="min"></div>
+        <!-- max는 지정한 수 이하 -->
+        <div class="max"></div>
+    </div>
+
+    <h2>단위</h2>
+    <!-- 띄어쓰기를 사용하면 두개의 클래스를 가질수 있음 -->
+    <div class="box box-px">px</div>
+    <div class="box box-view">viewport(vh,vw)</div>
+    <div class="box box-per">percent(%)</div>
+    <div class="rem">rem
+        <div class="rem">rem
+            <div class="rem">rem</div>
+        </div>
+    </div>
+    <div class="em">em
+        <div class="em">em
+            <div class="em">em</div>
+        </div>
+    </div>
+
+    <h2>border, border-radius</h2>
+    <div class="square border"></div>
+    <div class="square rounded"></div>
+    
+    <h2>box-sizing</h2>
+    <div class="square box-sizing content-box">얍</div>
+    <div class="square box-sizing border-box">얍</div>
+    
+    <!-- 실습 -->
+     <h2>모습 안보이게 하기</h2>
+    <div class="square">original</div>
+    <div class="square d-none">d-none</div>
+    <div class="square invisible">invisible</div>
+    <div class="square opacity-0">opacity-0</div>
+    <div class="square">original</div>
+
+    <h2>overflow</h2>
+    <!-- .square*4>p{lorem15}+img -->
+    <div class="square overflow-hidden">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sit, sunt alias fugit dolore error!</p>
+        <img src="./img/pooh.png" alt="pooh사진">
+    </div>
+    <div class="square overflow-auto">
+        <!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure laborum dignissimos non iusto accusamus odio.</p>
+        <img src="./img/pooh.png" alt="pooh사진"> -->
+    </div>
+    <div class="square overflow-scroll">
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum consequuntur accusantium numquam repellendus mollitia soluta?</p>
+        <img src="./img/pooh.png" alt="pooh사진"> -->
+    </div>
+    <div class="square overflow-visible">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate repellendus ex magni sit eveniet?</p>
+        <img src="./img/pooh.png" alt="pooh사진">
+    </div>
+    
+    <br><br><br><br>
 </body>
 </html>
