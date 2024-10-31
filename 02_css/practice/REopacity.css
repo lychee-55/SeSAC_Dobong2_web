@@ -46,6 +46,13 @@
     border: 2px solid blue;
 }
 
+.border-vari{
+    border-top: 1px solid brown;
+    border-right: 5px dotted rgb(27, 184, 63);
+    border-bottom: 10px dashed aqua;
+    border-left: 5px brown;
+}
+
 /* radius사용해보기 */
 .border-radius{
     border-radius: 10px 50px 70px 100px;

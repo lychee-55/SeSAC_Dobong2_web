@@ -1,0 +1,46 @@
+.box{
+    display: inline-block;
+    width: 400px;
+    height: 800px;
+    border: 1px solid black;
+}
+
+.background{
+    background-color: aquamarine;
+    background: palegoldenrod;
+
+    /* 단축속성: color image repeat position/size.. */
+    /* 그라데이션 앞에 각도(deg)는 각도를 쓰거나 'to 방향'으로도 가능함 */
+    background: linear-gradient(to right, black, white);
+}
+
+.background-image{
+    background-image: url('./img/small_img.png');
+
+    /* 1. background-repeat */
+    background-repeat: repeat;
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
+    background-repeat: no-repeat;
+
+    /* 2. background-position */
+    background-position: top left;
+    background-position: center;
+    background-position: top center;
+    background-position: 100px;
+    background-position: 100px 10px;  /* x축 y축 순서 */
+    background-position: top left;
+
+    /* 3. background-size */
+    background-size: auto;
+    /* size 하나만 쓰면 가로너비 설정되고, 세로는 비율에 맞춰서 자동 설정됨 */
+    background-size: 50px;
+    background-size: 100px 200px;  /* x축 y축 순서 */
+    background-size: contain;
+    background-size: cover;
+
+    /* 4.background-attachment */
+    background-attachment: fixed;
+    background-attachment: scroll;
+
+}

@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 2000px;
+    /* 그라데이션 */
+    background: linear-gradient(white, rgb(134, 231, 69));
+}
+
+.container{
+    width: 500px;
+    height: 500px;
+    font-weight: 100px;
+    text-align: center;
+    /* line-height: 500px; */
+    background-color: gold;
+    position: relative;
+}
+
+.container > div{
+    width: 100px;
+    height: 100px;
+}
+
+.position-relative{
+    background-color: aqua;
+    position: relative;
+    left: 50px;
+    top: 30px;
+}
+
+.position-absolute{
+    background-color: blanchedalmond;
+    position:absolute;
+    right: 30px;
+    bottom: 100px;
+}
+
+.position-fixed{
+    background-color: cadetblue;
+    position: fixed;
+    right: 100px;
+    top: 100px;
+}
