@@ -53,6 +53,61 @@ transition vs. animation
         left: 0px;
     }
 }
-.bounce-ball1{}
+.bounce-ball1{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: orange;
+    position: absolute;
+    top: 0px;
+    left: 250px;
 
-.bounce-ball2{}
+    /* 공이 떨어질 때
+        - 빠름 -> 느림
+       공이 튀어 오를 때
+        - 느림 -> 빠름 
+    */
+    animation: bounce1  1s ease-out 4 alternate;
+    /* normal은 처음에서 끝으로, alertnate는 처음에서 끝->끝에서 처음 */
+    /* 
+    normal : from-> to, from -> to 
+    alertnate : from -> to, to -> from
+    */
+}
+
+@keyframes bounce1{
+    from{
+        top: 300px;
+    }
+
+    to{
+        top: 0px;
+    }
+}
+
+.bounce-ball2{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: black;
+    position: absolute;
+    bottom: 0;
+
+    animation: bounce2 2s infinite ;
+}
+
+@keyframes bounce2{
+    from, to{
+        bottom: 0;
+        width: 55px;
+        /* 천천히 속도를 줄이도록 */
+        animation-timing-function: ease-out;
+    }
+
+    50%{
+        width: 50px;
+        bottom: 300px;
+        /* 속도가 빨라지도록 */
+        animation-timing-function: ease-in;
+    }
+}
