@@ -1,0 +1,37 @@
+.container{
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+
+.ball{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(60deg,yellow,rgb(255, 115, 0),rgb(132, 88, 7));
+
+    animation: ball-run1 3s ease-in-out 2 normal;
+}
+
+@keyframes ball-run1{
+    0%, 100%{
+        top: 0%;
+        left: 0px;
+    }
+
+    25%{
+        top: 0%;
+        left: calc(100vw - 100px);
+    }
+
+    50%{
+        top: calc(100vh - 100px);
+        left: calc(100vw - 100px);
+    }
+
+    75%{
+        top: calc(100vh - 100px);
+        left: 0px;
+    }
+}

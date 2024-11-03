@@ -1,0 +1,374 @@
+> 한 번이 어렵지 두 번은 쉽다! 코딩 마스터가 되는 그 날까지ㅜㅜ
+오롯이 나를 위한 복습 정리! 시작해보자!
+
+> 목차:
+1.HTML이란?
+  1-1. HTML 구조
+2.HTML의 태그란?
+  2-1. HTML 기본 문법
+  2-2. HTML 태그 종류
+      2-2-1. 기본 태그
+      2-2-2. form 태그
+      2-2-3. table 태그
+
+
+## 🧐HTML이란?
+웹사이트의 모습을 기술하기 위한 마크업언어.
+프로그래밍 언어가 아니라 마크업 정보를 표현하는 마크업 언어로 문서의 내용 이외의 문서의 구조나 서식 같은 것을 포함한다.
+
+그렇다면, HTML은 어떻게 만드는가?
+
+### ■ HTML 구조📱:
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+```
+html문서를 작성할 때는 꼭 <code>!DOCTYPE html</code>로 시작하여 문서 형식을 html5로 지정해야합니다.
+
+<br/>
+
+## 🥸HTML의 <태그>란?
+HTML을 기술하기 위해서 사용하는 명령어의 집합을 <태그>라고 한다.
+<태그>의 종류는 다양하니, 하나하나씩 알아봅니다 
+
+<code>head</code>태그: 메타데이터를 포함하기 위한 태그, 웹페이지에 존재하며 화면에 표시되지 않는다. <code>head</code>태그에 주로 오는 요소들은 이러하다 **:**
+<ul>
+  <li>title : html문서의 제목</li>
+  <li>style : html문서의 style정보</li>
+  <li>link : 외부 리소스와 연결 정보 (주로 css파일 연계시 사용)</li>
+  ~~아직 사용해본 내용만 적어봤다.~~
+</ul>
+
+<code>body</code>태그: 웹페이지를 구성하는 대부분의 요소를 <code>body</code>태그 내에 작성할 수 있습니다.
+
+<br/>
+
+### ■ HTML 기본 문법📜:
+한 태그의 **_속성_**  작성법은 이러합니다 **:**
+<code><태그 속성="값">내용</태그></code>
+
+모든 태그들과 요소들을 작성할 때는 보통 <code><태그></태그></code>로 작성하고 그 사이에 내용을 작성하는데, 그렇지 않은 요소를 **_빈요소_**  라고 합니다. **_빈요소_** 는 주로 <code>br</code>,<code>hr</code>,<code>img</code>,<code>input</code>,<code>link</code>등을 사용합니다. (안전성을 위해 빈요소 작성시에는 꼭 /을 요소 뒤에 넣는 습관을 기릅시다.ex: <code><태그/></code>)
+
+<br/>
+
+### ■ HTML 태그 종류🤩:
+**기본 태그:**
+<ul>
+  <li><code>h1,h2,h3,h4,h5,h6</code> : 제목 태그, 숫자 순서에 따라 글씨 크기가 달라집니다. (자동 줄바꿈 적용됨)</li>
+  <li><code>p</code> : 본문 태그 (자동 줄바꿈 적용됨)</li>
+  <li><code>br</code> : 줄 바꿈 태그(html문서에서 enter로 줄을 바꿀 수 없음)</li>
+  <li><code>ul</code> : 순서 없는 목록, <code>type</code>속성을 통해 모양 변경가능. ex : <code>type:"square, circle..."</code>등 택 1
+      </li>
+  <li><code>ol</code> : 순서 있는 목록, <code>type</code> 속성 적용해 말머리 기호 변경가능.
+      <ul type="circle">
+         <li>속성 사용 가능 (ol type: "1, A, a, I, i 중 택 1")</li>
+         <li>ol start="?" --- 시작 값 변경</li>
+         <li>ol reversed  --- 역순으로 시작</li>
+      </ul></li>
+  <li><code>li</code> : <code>ul</code>이나<code>ol</code>사용시 리스트 항목을 만들어 주는 코드</li>
+  <li><code>hr</code> : 수평 줄 만드는 태그</li>
+  <br>
+  <li><code>summary</code>와<code>details</code> : 내용을 숨겨주는 태그</li>
+      <details>
+         <summary>이렇게 말이죠(클릭)👇</summary>
+            짜쟌~~~☆*: .｡. o(≧▽≦)o .｡.:*☆
+      </details>
+      <br><br>
+  <li>문자 꾸미기 태그</li>
+  <ol>
+        <li><code>b</code>,<code>strong</code> : 글자를 <b>두껍게!</b> ;</li>
+        <li><code>i</code>,<code>em</code> : 글자를 <i>기울게</i> ;</li>
+        <li><code>del</code> : 중간 줄 긋기;</li>
+        <li><code>u</code> : 밑줄 긋기;</li>
+      </ol>
+  <li><code>img</code> : 이미지를 넣을 때 사용하는 태그</li>
+  <ul>
+    <li><code>src</code> : <code>src</code> 속성은 img 파일의 인터넷 주소 링크나 파일위치를 작성하는 곳</li>
+    <li><code>alt</code> : <code>alt</code> 속성은 정보를 더 주기 위한 속성</li>
+  </ul>
+      <details>
+        <summary><code>src</code></summary>
+        <div><code>src</code> 속성은 img 파일의 인터넷 주소 링크나 파일위치를 작성하는 곳</div>
+      </details>
+      <details>
+        <summary><code>alt</code></summary>
+        <div><code>alt</code> 속성은 정보를 더 주기 위한 속성</div>
+      </details>  
+  <li><code>a</code> : 하이퍼링크 태그</li>
+      <ul>
+        <li><code>href</code> : 인터넷 주소 링크나 파일위치를 작성하는 곳</li>
+        <li><code>target</code> : 새 탭 열기 여부 설정  ex. <code>_blank</code>,<code>_self</code></li>
+      </ul>
+</ul>
+.....🤯🤯
+
+<br/>
+<h3>🥺HTML form 태그 정리</h3>
+  
+  <ol>
+      <li>입력값 <code>input type</code>👇</li>
+      <ul type="circle">
+        <li><code>button</code> : <code>button</code>의 type은 value로 이름 설정 가능.
+            <p>ex. <input type="button" value="버튼"></p></li>
+        <li><code>text</code> : <code>text</code>는 <code>placeholder</code>로 내용 설정가능,문구와 칸이랑 연동 필요시, label을 사용해서 진행.
+            <p><label for="text">ex. 텍스트 칸<input type="text" id="text" /></label></p></li>
+        <li><code>email</code> : <code>email</code>은 이메일 작성 칸을 만드는 것, placeholder를 통해 예시문구 작성 가능. 
+            <p><label for="emailID">ex. email
+            <input type="email" id="emailID" placeholder="example@naver.com"></label></p></li>
+        <li><code>password</code> : <code>password</code>는 암호 작성 칸 만들기. 
+            <p><label for="pw">ex. password
+            <input type="password" id="pw" placeholder="8~12개 숫자 및 영어"></label></p></li>
+        <li><code>checkbox</code> : <code>checkbox</code>는 여러 선택사항 선택 가능.
+              <p><label>ex. <input type="checkbox" name="input" id="choose">어느</label>
+              <label><input type="checkbox" name="input" id="choose">것을</label>
+                <label><input type="checkbox" name="input" id="choose">선택</label></p></li>
+        <li><code>radio</code> : <code>radio</code>는 하나만 선택가능. 
+              <p><label>ex. <input type="radio" name="input" id="one">하나</label>
+              <label><input type="radio" name="input" id="one">만</label>
+              <label><input type="radio" name="input" id="one">선택</label></p></li>
+      </ul>
+   </ol>
+
+<br/>
+<h3>🥹<code>table</code>태그 정리📊</h3>
+    <ul type="square">  
+      <li><code>tr</code> : 표 내부의 행</li>
+      <details>
+        <summary><code>table</code>속성</summary>
+        <ul type="circle">
+          <li><code>border</code> : 테두리 두께. ex : <code>border: 1px solid black;</code></li>
+          <li><code>cellspacing</code> : 테두리 간격 사이의 너비</li>
+          <li><code>cellpadding</code> : 셀 내부의 간격</li>
+          <li><code>align</code> : 테이블 정렬 속성</li>
+          <li><code>width</code>,<code>height</code> : 테이블 너비와 높이</li>
+          <li><code>background-color</code>와<code>bordercolor</code> : 테이블 배경색과 테두리 색</li>
+        </ul>
+      </details>
+      <li><code>th</code> : 표 내부의 제목 칸</li>
+      <li><code>td</code> : 행 내부의 일반 칸</li>
+      <details>
+        <summary><code>td</code>속성</summary>
+        <ul>
+          <li><code>colspan</code> : 해당 칸이 점유하는 열의 수를 지정함</li>
+          <li><code>rowspan</code> : 해당 칸이 점유하는 행의 수를 지정함</li>
+          <li>예시1
+            <table border="">
+              <tr align="center">
+                <td>td</td>
+                <td>td</td>
+                <td>td</td>
+              </tr>
+              <tr align="center">
+                <td>td</td>
+                <td>td</td>
+                <td>td</td>
+              </tr>
+            </table></li>
+          <li>예시2 :
+            <table border="1" cellspacing="0" cellpadding="50" width="600" height="300">
+              <tr align="center">
+                <td colspan="2">1</td>
+                <!-- <td>1</td> -->
+                <td rowspan="2">2</td>
+              </tr>
+              <tr align="center">
+                <td rowspan="2">3</td>
+                <td>center</td>
+                <!-- <td>2</td> -->
+              </tr>
+              <tr align="center">
+                <!-- <td>3</td> -->
+                <td colspan="2">4</td>
+                <!-- <td>3</td> -->
+              </tr>
+            </table></li>
+        </ul>
+      </details>
+     </ul>
+  
+  <br/>
+  HTML 복습 끝!!!🎉🎉🎉
+  <li><code>img</code> : 이미지를 넣을 때 사용하는 태그</li>
+      <ul>
+        <li><code>src</code> : <code>src</code> 속성은 img 파일의 인터넷 주소 링크나 파일위치를 작성하는 곳</li>
+        <li><code>alt</code> : <code>alt</code> 속성은 정보를 더 주기 위한 속성</li>
+    </ul>
+
+
+
+    ------------------------------------
+    ------------------------------------
+    > 한 번이 어렵지 두 번은 쉽다! 코딩 마스터가 되는 그 날까지ㅜㅜ
+    오롯이 나를 위한 복습 정리! 시작해보자!
+    
+    > 목차:
+    1.HTML이란?
+      1-1. HTML 구조
+    2.HTML의 태그란?
+      2-1. HTML 기본 문법
+      2-2. HTML 태그 종류
+          2-2-1. 기본 태그
+          2-2-2. form 태그
+          2-2-3. table 태그
+    
+    
+    ## 🧐HTML이란?
+    웹사이트의 모습을 기술하기 위한 마크업언어.
+    프로그래밍 언어가 아니라 마크업 정보를 표현하는 마크업 언어로 문서의 내용 이외의 문서의 구조나 서식 같은 것을 포함한다.
+    
+    그렇다면, HTML은 어떻게 만드는가?
+    
+    ### ■ HTML 구조📱:
+    ```
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+    </body>
+    </html>
+    ```
+    html문서를 작성할 때는 꼭 <code>!DOCTYPE html</code>로 시작하여 문서 형식을 html5로 지정해야합니다.
+    
+    <br/>
+    
+    ## 🥸HTML의 <태그>란?
+    HTML을 기술하기 위해서 사용하는 명령어의 집합을 <태그>라고 한다.
+    <태그>의 종류는 다양하니, 하나하나씩 알아봅니다 :)
+    
+    <code>head</code>태그: 메타데이터를 포함하기 위한 태그, 웹페이지에 존재하며 화면에 표시되지 않는다. <code>head</code>태그에 주로 오는 요소들은 이러하다 **:**
+    <ul>
+      <li>title : html문서의 제목</li>
+      <li>style : html문서의 style정보</li>
+      <li>link : 외부 리소스와 연결 정보 (주로 css파일 연계시 사용)</li>
+      ~~아직 사용해본 내용만 적어봤다.~~
+    </ul>
+    
+    <code>body</code>태그: 웹페이지를 구성하는 대부분의 요소를 <code>body</code>태그 내에 작성할 수 있습니다.
+    
+    <br/>
+    
+    ### ■ HTML 기본 문법📜:
+    한 태그의 **_속성_**  작성법은 이러합니다 **:**
+    <code><태그 속성="값">내용</태그></code>
+    
+    모든 태그들과 요소들을 작성할 때는 보통 <code><태그></태그></code>로 작성하고 그 사이에 내용을 작성하는데, 그렇지 않은 요소를 **_빈요소_**  라고 합니다. **_빈요소_** 는 주로 <code>br</code>,<code>hr</code>,<code>img</code>,<code>input</code>,<code>link</code>등을 사용합니다. (안전성을 위해 빈요소 작성시에는 꼭 /을 요소 뒤에 넣는 습관을 기릅시다.ex: <code><태그/></code>)
+    
+    <br/>
+    
+    ### ■ HTML 태그 종류🤩:
+    **기본 태그:**
+    <ul>
+      <li><code>h1,h2,h3,h4,h5,h6</code> : 제목 태그, 숫자 순서에 따라 글씨 크기가 달라집니다. (자동 줄바꿈 적용됨)</li>
+      <li><code>p</code> : 본문 태그 (자동 줄바꿈 적용됨)</li>
+      <li><code>br</code> : 줄 바꿈 태그(html문서에서 enter로 줄을 바꿀 수 없음)</li>
+      <li><code>ul</code> : 순서 없는 목록, <code>type</code>속성을 통해 모양 변경가능. ex : <code>type:"square, circle..."</code>등 택 1
+          </li>
+      <li><code>ol</code> : 순서 있는 목록, <code>type</code> 속성 적용해 말머리 기호 변경가능.
+          <ul type="circle">
+             <li>속성 사용 가능 (ol type: "1, A, a, I, i 중 택 1")</li>
+             <li>ol start="?" --- 시작 값 변경</li>
+             <li>ol reversed  --- 역순으로 시작</li>
+          </ul></li>
+      <li><code>li</code> : <code>ul</code>이나<code>ol</code>사용시 리스트 항목을 만들어 주는 코드</li>
+      <li><code>hr</code> : 수평 줄 만드는 태그</li>
+      <li><code>summary</code>와<code>details</code> : 내용을 숨겨주는 태그</li>
+      <li>문자 꾸미기 태그</li>
+      <ol>
+            <li><code>b</code>,<code>strong</code> : 글자를 <b>두껍게!</b> ;</li>
+            <li><code>i</code>,<code>em</code> : 글자를 <i>기울게</i> ;</li>
+            <li><code>del</code> : 중간 줄 긋기;</li>
+            <li><code>u</code> : 밑줄 긋기;</li>
+          </ol>
+      <li><code>img</code> : 이미지를 넣을 때 사용하는 태그</li>
+          <ul>
+        <li><code>src</code> : <code>src</code> 속성은 img 파일의 인터넷 주소 링크나 파일위치를 작성하는 곳</li>
+        <li><code>alt</code> : <code>alt</code> 속성은 정보를 더 주기 위한 속성</li>
+      </ul>
+      <li><code>a</code> : 하이퍼링크 태그</li>
+          <ul>
+            <li><code>href</code> : 인터넷 주소 링크나 파일위치를 작성하는 곳</li>
+            <li><code>target</code> : 새 탭 열기 여부 설정  ex. <code>_blank</code>,<code>_self</code></li>
+          </ul>
+    </ul>
+    .....🤯🤯
+    
+    <br/>
+    <h3>🥺HTML form 태그 정리</h3>
+      
+      <ol>
+          <li>입력값 <code>input type</code>👇</li>
+          <ul type="circle">
+            <li><code>button</code> : <code>button</code>의 type은 value로 이름 설정 가능.
+                <p>ex. <input type="button" value="버튼"></p></li>
+            <li><code>text</code> : <code>text</code>는 <code>placeholder</code>로 내용 설정가능,문구와 칸이랑 연동 필요시, label을 사용해서 진행.
+                <p><label for="text">ex. 텍스트 칸<input type="text" id="text" /></label></p></li>
+            <li><code>email</code> : <code>email</code>은 이메일 작성 칸을 만드는 것, placeholder를 통해 예시문구 작성 가능. 
+                <p><label for="emailID">ex. email
+                <input type="email" id="emailID" placeholder="example@naver.com"></label></p></li>
+            <li><code>password</code> : <code>password</code>는 암호 작성 칸 만들기. 
+                <p><label for="pw">ex. password
+                <input type="password" id="pw" placeholder="8~12개 숫자 및 영어"></label></p></li>
+            <li><code>checkbox</code> : <code>checkbox</code>는 여러 선택사항 선택 가능.
+                  <p><label>ex. <input type="checkbox" name="input" id="choose">어느</label>
+                  <label><input type="checkbox" name="input" id="choose">것을</label>
+                    <label><input type="checkbox" name="input" id="choose">선택</label></p></li>
+            <li><code>radio</code> : <code>radio</code>는 하나만 선택가능. 
+                  <p><label>ex. <input type="radio" name="input" id="one">하나</label>
+                  <label><input type="radio" name="input" id="one">만</label>
+                  <label><input type="radio" name="input" id="one">선택</label></p></li>
+          </ul>
+       </ol>
+    
+    <br/>
+    <h3>🥹<code>table</code>태그 정리📊</h3>
+        <ul type="square">  
+          
+          <li><code>table</code>속성</li>
+            <ul type="circle">
+              <li><code>border</code> : 테두리 두께. ex : <code>border: 1px solid black;</code></li>
+              <li><code>cellspacing</code> : 테두리 간격 사이의 너비</li>
+              <li><code>cellpadding</code> : 셀 내부의 간격</li>
+              <li><code>align</code> : 테이블 정렬 속성</li>
+              <li><code>width</code>,<code>height</code> : 테이블 너비와 높이</li>
+              <li><code>background-color</code>와<code>bordercolor</code> : 테이블 배경색과 테두리 색</li>
+            </ul>
+          <li><code>tr</code> : 표 내부의 행</li>
+          <li><code>th</code> : 표 내부의 제목 칸</li>
+          <li><code>td</code> : 행 내부의 일반 칸</li>
+      <ul><li><code>td</code>속성</li>
+            <ul>
+              <li><code>colspan</code> : 해당 칸이 점유하는 열의 수를 지정함</li>
+              <li><code>rowspan</code> : 해당 칸이 점유하는 행의 수를 지정함</li>
+              <li>예시1
+                <table border="">
+                  <tr align="center">
+                    <td>td</td>
+                    <td>td</td>
+                    <td>td</td>
+                  </tr>
+                  <tr align="center">
+                    <td>td</td>
+                    <td>td</td>
+                    <td>td</td>
+                  </tr>
+                </table></li>
+            </ul>
+          </ul>
+         </ul>
+      
+      <br/>
+      HTML 복습 끝!!!🎉🎉🎉

@@ -1,0 +1,47 @@
+.container{
+    width: 1000px;
+    height: 500px;
+    background-color: lightgray;
+    position: relative;
+}
+
+.img{
+    position: absolute;
+    transform: skewY(30deg);
+    transition: 1s ease 0s;
+    cursor: pointer;
+}
+
+.beach1{
+    left: 20%;
+    top: 30%;
+    z-index: 1;
+}
+
+.beach1:hover{
+    transform: skewY(0deg);
+    transition: 1s ease 0s;
+}
+
+.beach2{
+    left: 35%;
+    top: 30%;
+    z-index: 2;
+}
+
+.beach2:hover{
+    transform: skewY(0deg);
+    transition: 1s ease 0s;
+}
+
+
+.beach3{
+    left: 50%;
+    top: 30%;
+    z-index: 3;
+}
+
+.beach3:hover{
+    transform: skewY(0deg);
+    transition: 1s ease 0s;
+}
