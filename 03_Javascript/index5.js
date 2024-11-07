@@ -82,3 +82,70 @@ for(let i=0; i<=20; i=i+2){
     sum4+=i
 }
 console.log(sum4)
+
+let sum5 = 0
+// 홀수의 핪 구하기
+for(let i = 0; i < 10; i++){
+    // if(i%2==1) sum5+=i  //실행하고 싶은 코드가 한줄만 있을때 중가로 생략가능\
+    if(i%2===0) continue  //다음반복으로 넘어가도록
+    sum5 = sum5 + i
+}
+console.log(sum5) //0~10까지의 홀수의 합, 25
+
+// 구구단 만들기--------------------------------
+for(let i=0; i<5; i++){
+    console.log('------------')
+    console.log(i)
+    for(let j=0; j<5; j++){
+        console.log('j:',j)
+    }
+}
+
+for(let i=2; i<10; i++){
+    console.log(i+'단')
+    for(let j=1; j<10; j++){
+        // console.log(i,'X',j,'=',i*j)
+        console.log(`${i}X${j}=${i*j}`)
+    }
+}
+
+/* while문 */
+let n1 = 1 
+while(n1<=5){
+    console.log(n1)
+    n1++
+}
+
+let n2 = 9
+while(n2>=5){
+    console.log(n2)
+    n2--
+}
+
+//while문을 이용해서 10부터 1까지 홀수만 출력
+let n3 = 10
+while(n3 >= 1){
+    if(n3%2===1){
+        console.log(n3)
+    }
+    n3--
+}
+
+
+//  무한루프 신중!!!!
+let a=0
+while(true){
+    console.log(a)
+    a++
+    if(a > 10){
+        break
+    }
+}
+
+// confirm와 같이 눈에 보이는 창으로 조건을 걸어 제어(true나 false를 대체)
+let a2=0
+while(confirm("계속 진행 하시겠습니까?")){
+    // 확인=true , 취소=false
+    a2++
+    alert(`${a2}번째 alert 창`) 
+}
