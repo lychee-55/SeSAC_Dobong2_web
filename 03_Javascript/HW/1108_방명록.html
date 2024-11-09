@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>방명록 만들기</title>
+  </head>
+  <body>
+    <h1>여기는 방명록!!</h1>
+    <form>
+      <label for="writer">작성자</label>
+      <input type="text" id="writer" autocomplete="off" />
+      <br />
+      <br />
+
+      <label for="content">내용</label>
+      <input type="text" id="content" style="width: 500px" autocomplete="off" />
+      <br />
+      <br />
+
+      <button type="button" onclick="writeNote();">등록</button>
+    </form>
+
+    <br />
+    <br />
+
+    <table id="table" border="1" cellpadding="10" cellspacing="1">
+      <tr>
+        <th>작성자</th>
+        <th>내용</th>
+        <th>작성일</th>
+      </tr>
+      <!-- 
+        코드 추가 예시
+        <tr>
+          <td>홍길동</td>
+          <td>하이</td>
+          <td>2022-10-05 12:34</td>
+        </tr>
+      -->
+    </table>
+
+    <script>
+      // TODO: practice14_설명.png 이미지의 조건을 만족하는 js 코드 작성
+      // writeNote() 함수를 미리 정의해두었습니다.
+
+      // [등록] 버튼 클릭시 writeNote() 함수가 실행되도록 인라인 방식으로 미리 설정해 두었습니다.
+      const name = document.querySelector('#writer')
+      const content = document.querySelector('#content')
+      const day = new Date()
+      const table = document.querySelector('#table')
+
+      function writeNote() {
+          const tr = document.createElement('tr')
+          let td1 = document.createElement('td')
+          let td2 = document.createElement('td')
+          let td3 = document.createElement('td')
+
+        let h1 = name.value;
+        let h2 = content.value;
+        // console.log(h1)
+
+        const year = day.getFullYear();
+        const month = day.getMonth();
+        const date = day.getDate();
+        const hour = day.getHours();
+        const minu = day.getMinutes();
+        let h3 = `${year}-${month+1}-${date} ${hour}:${minu}`;
+
+
+        td1.innerText=h1
+        td2.innerText=h2
+        td3.innerHTML=h3
+        
+        
+        // name.innerHTML = `${name.value}`
+        // content.innerHTML = `${content.value}`
+        // day.innerHTML = `${day.value}`
+        // tr.innerHTML = 'td'
+        // td.innerHTML = `<td>${name.value}</td>,<td>${content.value}</td>,<td>${day.value}</td>`
+
+        
+        table.appendChild(tr)
+        tr.append(td1,td2,td3)
+        name.value=""
+        content.value=""
+    }
+    </script>
+  </body>
+</html>
