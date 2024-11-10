@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vloging2</title>
+    <style>
+        .container{
+            display: block;
+            background-color: aqua;
+            width: 500px;
+            height: 500px;
+        }
+
+        .box{
+            width: 100px;
+            background-color: bisque;
+            height: 100px;
+            border: 1px solid black;
+            flex-direction: row;
+        }
+    </style>
+</head>
+<body>
+    <h3>CSS</h3>
+    > 오늘은 CSS의 문법에 대해 작성해볼려고 합니다.
+    내용이 많아 까먹지 않게 간단하게 정리 해볼게요
+    
+    ### 🧐CSS란?
+    종속형 시트 또는 캐스케이딩 스타일 시트(영어: Cascading Style Sheet)는 마크업 언어가 실제 표시되는 방법을 기술하는 스타일 언어(영어: Style sheet language 스타일 시트 랭귀지로, HTML과 XHTML에 주로 쓰이며, XML에서도 사용할 수 있다. W3C의 표준이고, 레이아웃과 스타일을 정의할 때의 자유도가 높다. 기본 파일명은 style.css이다.    (출처:wikipedia)       
+    
+    간단하게 말하면 HTML문서를 꾸며주는 스타일 언어가 CSS다.
+    
+    <br/> 
+    
+    ### 🏫CSS 사용방법
+    CSS를 사용할려면 3가지 방식이 있다. 인라인방식, 내장 스타일과 링크방식.
+    html문서 내에서 태그안에 작성하는 _인라인 방식_, <code>head태그</code> 안에 작성하는 _내장 스타일_, <code>head태그</code>안에 <code>link태그</code>를 이용해 작성하는 _링크방식_ 이 있습니다.
+    그 외에도 <code>@import</code>를 통해 css문서 내에서 여러 css문서를 불러올 수 있다.
+    <br/>
+    <br/>
+    ### 🤩CSS 선택자
+    선택자는 종류가 많고 작성할 때 많이 까먹어서 이번기회에 다시 복습 해볼려고 한다ㅠㅠㅠ
+    
+    **기본 선택자:** 
+    <ul>
+        <li><code>*</code> : 전체 선택자</li>
+        <li><code>AAA</code> : 태그 선택자</li>
+        <li><code>.AAA</code> : 클래스 선택자</li>
+        <li><code>#AAA</code> : 아이디 선택자</li>
+    </ul>
+    
+    **복합 선택자:**
+    <ul>
+        <li><code>AAABBB</code> : 일치 선택자</li>
+        <li><code>AAA > BBB</code> : 자식 요소 선택자, AAA의 자식요소 BBB를 선택하는 것</li>
+        <li><code>AAA BBB</code> : 하위요소 선택자, AAA의 하위요소인 BBB 모두를 선택하는 것 (띄어쓰기 필수!)</li>
+        <li><code>AAA + BBB</code> : 선택자의 다음 형제요소 중 하나 선택자</li>
+        <li><code>AAA ~ BBB</code> : 선택자의 다음 형제요소 모두 선택자</li>
+    </ul>
+    
+    **가상요소 선택자**
+    <ul>
+        <li><code>AAA:hover</code> : 선택된 AAA에 마우스가 올라가 있는 동안 선택함.</li>
+        <li><code>AAA:active</code> : 선택된 AAA를 마우스로 클릭하고 있는동안 선택함</li>
+        <li><code>AAA:focus</code> : AAA가 포커스 되면 선택되는 선택자</li>
+        <li><code>AAA:first-child</code> : 선택한 AAA가 형제요소 중 첫째라면 선택함 </li>
+        <li><code>AAA:last-child</code> : 선택한 AAA가 형제요소 중 막내라면 선택함</li>
+        <li><code>AAA:nth-child(n)</code> : 선택한 AAA의 형제요소 중 (n)번째 선택하는 선택자 (AAA는 전체선택자<code>*</code>도 사용할 수 있음.)</li>
+        <li><code>AAA:not(BBB)</code> : AAA요소 중 BBB가 아닌 요소 선택자 </li>
+    </ul>
+    
+    **속성 선택자**
+    <ul>
+        <li><code>[AAA]</code> : 속성 AAA를 포함한 요소를 선택</li>
+        <li><code>[AAA="BBB"]</code> : 속성 AAA면서 value가 BBB인 요소를 선택</li>
+    </ul>
+    <br/>
+    
+    ### 🤯CSS 속성
+    CSS에 사용되는 속성은 너무 많아서 잘 모르거나 헷갈리는 것 위주로 다시 복습해 볼려고 한다.
+    <ul>
+        <li><code>line-height</code> : 한 줄의 높이, 보통은 글과 글 사이에 (2줄이상) 간격을 정하는데 사용한다. 작성 방법은 아래와 같이 사용할 수 있다. ↓</li>
+    </ul>
+    
+    ```
+    line-height : 32px;
+    line-height : 2;
+    line-height : 200%;
+    ```
+    
+    **▼ <code>display</code>**👇
+    <code>display</code>는 CSS 배울때 제일 어렵다고 느낀거같다... <code>display</code>란, 요소가 회면에 출력되는 특성을 설정하는 건데..일단 <code>display</code>값으로 무엇이 있는지 알아보자. **↓↓**
+    
+    <ul>
+        <li><code>block</code> : 레이아웃 요소로 출력 됨</li>
+        <li><code>inline</code> : 글자 요소로 출력됨</li>
+        <li><code>inline-block</code> : 글자와 상자요소 동시에 출력함.</li>
+        <li><code>flex</code> : 1차원 레이아웃, 따로 값을 지정하고 사용한다.</li>
+        <li><code>grid</code> : 2차원 레이아웃, 위 flex와 동일하게 따로지정 필요.</li>
+        <li><code>none</code> : 화면에서 사라짐 (<code>visibility</code>와 <code>opacity</code>랑 비슷하나 다르다.)</li>
+      
+    
+    **▼ <code>display : flex</code>**👇
+    <code>display : flex</code>  를 사용할 때 지정하는 다른 요소들이 몇개 있는데, 이것도 역시 자주 까먹어서 다시 정리한다...
+    <ul>
+        <li><code>flex-direction</code> : 축의 방향을 설정한다, <code>row</code>는 행 축,<code>column</code>은 열 축으로, 순서 번경을 원한다면 <code>-reverse</code>를 붙여야한다.</li>
+        <li><code>flex-wrap</code> : 아이템의 줄바꿈 여부를 지정한다, <code>nowrap</code>은 줄바꿈 없음,<code>wrap</code>은 아이템의 크기를 지키면서 줄을 바꿔준다.</li>
+        <li><code>justify-content</code> : 주 축의 정렬방법을 뜻하고, <code>flex-start</code>는 아이템을 시작점으로 정렬,<code>flex-end</code>는 끝 점에서 정렬, <code>center</code>는 아이템을 가운데로 정렬시킨다.이 외에도 <code>space-between</code>,<code>space-around</code>,<code>space-evenly</code>가 있다는 것을 기억하자.</li>
+        <li><code>align-items</code> : 교차 축의 한 줄 정렬방법을 뜻한다, <code>flex-start</code>는 각 줄의 시작점으로 아이템 정렬, <code>flex-end</code>는 끝점으로 정렬, <code>center</code>는 각 줄의 가운데로 정렬한다.</li>
+        <li><code>align-content</code> : 교차 축의 여러 줄 정렬방법, 다만 주의할 점은 <code>flex-wrap</code>이 <code>wrap일 때</code> 해당 값이 유효하다. 위 <code>align-items</code>와 같이 <code>flex-start</code>, <code>flex-end</code>, <code>center</code>,그 외에도 <code>space-between</code>,<code>space-around</code>가 있다.</li>
+     </ul>
+
+     
+ <div class="container">
+    <div class="box box1">1</div>
+    <div class="box box2">1</div>
+    <div class="box box3">1</div>
+ </div>
+
+
+</body>
+</html>
