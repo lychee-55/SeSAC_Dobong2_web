@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형</title>
+    <style>
+        /* 첫 설정은 큰화면을 主屏幕显示 */
+        body{
+            background-color: coral;
+        }
+
+        .outer > .inner > h1{  /* 관계를 여러 개 걸쳐서 쓰면 우선순위가 높아짐 */
+            font-size: 32px;
+            color: red;
+        }
+
+        .pc{
+            display: block;
+        }
+
+        .mobile{
+            display: none;
+        }
+        /*
+        기준점 (반응형은 꼭 만들고, tablet,PC,moblie사이즈 3개는 적어도 지켜주길 바람.)
+        - max-width : -px
+          - -px 이하일 때,
+          - 가장 큰 사이즈 먼저 제작 후 > > mobile 사이즈 제작
+        - min-width : -px
+          - -px 이상일 때
+          - 가장 작은 사이즈부터 먼저 제작 후 >> PC 사이즈 제작
+        */
+        /* 사이즈는 max나 min중 하나만 선택해서 연속 사용 지향 */
+        @media screen and (max-width: 700px){
+            .outer > .inner > h1{
+                font-size: 16px;
+                color: green;
+            }
+            body{
+                background-color: yellowgreen;
+            }
+        }
+
+        @media screen and (max-width: 500px){
+            .mobile{
+                display: block;
+            }
+
+            .pc{
+                display: none;   
+            }
+
+        }
+
+        @media (max-width:500px){
+            .outer > .inner > h1{
+                font-size: 10px;
+                color: yellow;
+            }
+            body{
+                display: block;
+                /* background-color: black; */
+            }
+        }
+        
+        @media screen and (min-width: 300px){
+            .outer > .inner > h1{
+                color: pink;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 관계를 body의 자식부터 하나하나 내려가 쓰는 것을 추천 -->
+    <div class="outer">
+        <div class="inner">    
+            <h1>Hello World</h1>
+        </div>    
+    </div>
+
+    <!-- 500px 기준으로
+     - mobile 환경에서는 mobile이라는 글자만 보이고
+     - pc환경에서는 pc라는 글자만 보이게 만들기
+      -->
+     <p class="mobile">mobile</p>
+     <p class="pc">pc</p>
+</body>
+</html>
