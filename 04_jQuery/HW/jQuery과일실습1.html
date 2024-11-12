@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery 실습1</title>
+    
+    <!-- jQueru CDN 불러오기 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <style>
+        img{
+            border: 5px solid yellowgreen;
+            border-radius: 30px;
+        }
+    </style>
+    
+    <script>
+      function changeImg(name) {
+        // name: apple or banana or grape or peach
+        if(name === 'apple'){
+            $("img").attr("src","./img/apple.jpg")
+        }else if(name === 'bananas'){
+            $("img").attr("src","./img/bananas.jpg")
+        }else if(name === 'grapes'){
+            $("img").attr("src","./img/grapes.jpg")
+        }else if(name === 'peaches'){
+            $("img").attr("src","./img/peaches.jpg")
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 필요하다면 이미지 경로 변경 -->
+    <img src="./img/q.jpg" alt="과일" width="230px" height="200px" />
+    <br />
+    <button onclick="changeImg('apple')">사과</button>
+    <button onclick="changeImg('bananas')">바나나</button>
+    <button onclick="changeImg('grapes')">포도</button>
+    <button onclick="changeImg('peaches')">복숭아</button>
+  </body>
+</html>

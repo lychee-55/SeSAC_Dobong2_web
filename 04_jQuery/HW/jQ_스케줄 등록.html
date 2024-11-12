@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스케줄 등록하기</title>
+    <style>
+        table{
+            /* border: 1px solid black; */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        td{
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center;  
+        }
+        
+        .div1{
+            font-size: 32px;
+            text-align: center;   
+            color: green;
+        }
+        
+        tr > td:first-child{
+            color: red;
+        }
+        
+        tr> th:first-child{
+            color: red;
+        }
+
+        tr> th:last-child{
+            color: blue;
+        }
+
+        tr > td:last-child{
+            color: blue;
+        }
+    </style>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
+
+    
+</head>
+<body>
+    <div>
+        <label for="date">날짜 : <input type="text" id="date" placeholder="날짜를 클릭해주세요:)"/></label><br>
+        <label for="content">내용 : <input type="text" id="content" placeholder="나의 계획은..."/></label>
+    </div>
+    <button id="add-content">작성</button>
+
+    <div class="div1">2024년 1월</div>
+    <table>
+        <tr class="days">
+            <th>日</th>
+            <th>月</th>
+            <th>火</th>
+            <th>水</th>
+            <th>木</th>
+            <th>金</th>
+            <th>土</th>
+        </tr>
+        <tr >
+            <td></td>
+            <td>1<p>내용</p></td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr >
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+        </tr>
+        <tr > 
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+        </tr>
+        <tr >
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+        </tr>
+        <tr >            
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+            <td>31</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
+    <script>
+        let dateInput = document.querySelector('#date');
+        let contentInput = document.querySelector('#content');
+        let tds = document.querySelectorAll('td');
+        let btn = document.querySelector('#add-content');
+
+        tds.forEach(function(td){
+            td.addEventListener('click',function(e){
+                e.preventDefault();
+                dateInput.value = this.textContent.trim();
+            })
+        })
+
+        
+        btn.addEventListener('click',(e)=>{
+            e.preventDefault();
+            
+            const date = dateInput.value.trim();
+            const content = contentInput.value.trim();
+            
+            tds.forEach(td =>{
+                if(td.textContent.trim() === date){
+                    td.innerHTML += `<p>${content}</p>`
+                }
+            }) 
+            
+            dateInput.value = ''
+            contentInput.value = ''
+        })
+        
+    </script>
+</body>
+</html>

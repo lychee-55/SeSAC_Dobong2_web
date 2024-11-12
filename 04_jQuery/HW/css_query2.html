@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header 만들기</title>
+    <style>
+        header{
+            background-color: gold;
+        }
+        .color{
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .menus{
+            display: flex;
+            justify-content: space-between; 
+        }
+
+        header > .color > .menus > li{
+            margin-left: 30px;
+        } 
+
+    </style>
+    <!-- 폰트 코드 jdc -->
+    <script src="https://kit.fontawesome.com/1a37f47d3b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="color">
+            <i class="fa-solid fa-ring jewel"></i>
+            <ul class="menus" style>
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+                <li>메뉴4</li>
+            </ul>
+            <i class="fa-regular fa-star"></i>
+        </div>
+    </header>
+</body>
+</html>

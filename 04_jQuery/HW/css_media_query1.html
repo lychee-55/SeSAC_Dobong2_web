@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>크기에 따라 자리 바꾸기</title>
+    <style>
+        .container{
+            width: 500px;
+            height: 500px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            border: 1px solid red;
+            border-radius: 10%;
+            margin: 10px;
+        }
+
+        .text1{
+            display: block;
+        }
+
+        .text2{
+            display: none;
+        }
+
+        @media screen and (max-width: 700px) {
+            .container{
+            width: 500px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            }
+
+            .box{
+                background-color: lightblue;
+            }  
+            
+            .text1{
+                display: none;
+            }
+
+            .text2{
+                display: block;
+            }
+        }
+    </style>
+    
+
+</head>
+<body>
+    <h1><span style="color: yellow;">실습</span> 크기에 따라 자리 바꾸기</h1>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <br />
+        <p class="text1">브라우저 넓이가 700px 초과일 때</p>
+        <p class="text2">브라우저 넓이가 700px 이하일 때</p>
+    </div>
+    
+</body>
+</html>
