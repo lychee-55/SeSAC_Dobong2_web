@@ -4,12 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>transition & transform, animation</title>
+    <style>
+        ul{
+            transform: perspective() translate() scale() rotate() skew();
+            transition: all 0s ease 0s;
+        }
+    </style>
 </head>
 <body>
-    <h3>CSS 변환,전환,애니메이션</h3>
+<h3>CSS 변환,전환,애니메이션</h3>
+> CSS 변환,전환,애니메이션 이 3개는 작성법이 까다로워 2탄으로 따로 정리 해볼게요.
 
-    > CSS 변환,전환,애니메이션 이 3개는 작성법이 까다로워 2탄으로 따로 정리 해볼게요.
+### transform
 
-    
+```
+<style>
+        ul{
+            transform: perspective() translate() scale() rotate() skew();
+        }
+    </style>
+```
+<code>transform</code>은 변환 함수를 뜻합니다. 보통은 개체의 위치 이동이나 회전 등에 사용됩니다. transform에 들어가는 변환 함수는 이렇게 있습니다:
+<ul>
+    <li>2차 변환 함수</li>
+    <ul>
+        <li>translate함수</li>
+        <ul>
+            <li><code>translate(x,y)</code> : 이동(x축,y축)</li>
+            <li><code>translateX(x)</code> : 이동(x축)</li>
+            <li><code>translateY(y)</code> : 이동(y축)</li>
+        </ul>
+    </ul>
+    <ul>
+        <li>scale함수</li>
+        <ul>
+            <li><code>scale(x,y)</code> : 크기(x축,y축)</li>
+            <li><code>scaleX(x)</code> : 크기(x축)</li>
+            <li><code>scaleY(y)</code> : 크기(y축)</li>
+        </ul>
+    </ul>
+    <ul>
+        <li>rotate함수</li>
+        <ul>
+            <li><code>rotate(-deg)</code> : 회전(각도)</li>
+        </ul>
+    </ul>
+    <ul>
+        <li>skew함수</li>
+        <ul>
+            <li><code>skewX(x)</code> : 기울임(x축)</li>
+            <li><code>skewY(y)</code> : 기울임(y축)</li>
+        </ul>
+    </ul>
+    <br />
+    <li>3D 변환 함수</li>
+    <ul>
+        <li>perspective함수</li>
+        <ul>
+            <li><code>perspective(-px)</code> : 원근법(거리)</li>
+        </ul>
+        <li>rotate함수</li>
+        <ul>
+            <li><code>rotateX(x)</code> : 회전(x축)</li>
+            <li><code>rotateY(y)</code> : 회전(y축)</li>
+            <li><code>backface-visibility</code> : 뒷면 숨김 여부 함수, <code>visible</code> (default값) 혹은<code>hidden</code>으로 설정 가능.</li>
+        </ul>
+        <br/>
+    </ul>
+</ul> 
+**주의할 점은 transform의 단축속성 작성법이다. <code>transform : 원근법 이동 크기 회전 기울임;</code> 이라는 것을 잊지말자!**
+
+### transition
+
+```
+<style>
+        ul{
+            transform: perspective() translate() scale() rotate() skew();
+            transition: all 0s ease 0s;
+        }
+    </style>
+```
+transition은 요소의 시작과 끝의 전환효과를 지정하는 것이다. 지속되는 시간, 전환 효과의 속도나 대기시간을 지정할 때 사용한다. transition에는 이렇게 있다▼
+<ul>
+    <li><code>transition-property</code> : </li>
+    <ul>
+        <li><code>all</code> : 모든 속성에 적용</li>
+        <li><code>속성이름</code> : 전환효과를 적용할 속성의 이름</li>
+    </ul>
+    <br />
+    <li><code>transition-duration</code> : 지속시간 설정</li>
+    <ul>
+        <li><code>0s</code> : 전환 효과 없음</li>
+        <li><code>-s</code> : -(지속시간)s 설정</li>
+    </ul>
+    <br />
+    <li><code>transition-timing-function</code> : 전환효과의 타이밍함수를 지정하는 것으로 값으론 이렇게 있다.↓</li>
+    <ul>
+        <li><code>ease</code> : 느리게-빠르게-느리게</li>
+        <li><code>linear</code> : 일정하게</li>
+        <li><code>ease-in</code> : 느리게-빠르게</li>
+        <li><code>ease-out</code> : 빠르게-느리게</li>
+        <li><code>ease-in-out</code> : 느리게-빠르게-느리게</li>
+    </ul>
+    <br />
+    <li><code>transition-delay</code></li>
+    <ul>
+        <li><code>0s</code> : 대기시간 없음</li>
+        <li><code>-s</code> : -(대기시간)s 설정</li>
+    </ul>
+</ul>
+
+**주의할 점은 transition의 단축속성 작성법이다. <code>transition** : 속성명 **지속시간** 타이밍함수 대기시간;</code> 이라는 것을 잊지말자!!
+
+<br />
+### animation
+
+```
+<style>
+    ul{
+        animation: example duration timing-function delay iteration-count direction fill-mode;
+    }
+
+    @keyframes example {
+        from{
+
+        }
+        to{
+
+        }
+    }
+
+    @keyframes example {
+        0%{
+
+        }
+        50%{
+
+        }
+        100%{
+
+        }
+    }
+</style>
+```
+animation은 말 그대로 요소에 애니메이션 효과를 적용할 때 사용하는 코드입니다. 먼저 <code>@keyframes</code>로 만들고 싶은 애니메이션 효과를 지정하고, 추가하고 싶은 태그에 <code>animation</code>을 작성하여 사용합니다. 
+또한, <code>animation</code>을 작성할 때 위의 코드와 같이 몇 개의 요소들을 지정해야 합니다.
+
+<ul>
+    <li><code>animation-name</code> : <code>@keyframes</code>로 지정한 애니메이션 이름 작성</li>
+    <li><code>animation-duration</code> : 애니메이션의 지속시간 설정</li>
+    <li><code>animation-delay</code> : 애니메이션의 지연시간</li>
+    <li><code>animation-interation-count</code> : 반복되는 횟수 지정. 숫자, 소수점, <code>infinite</code>로 지정</li>
+    <li><code>animation-timing-fuction</code> : 애니메이션이 진행되는 형태 설정, 위 transition과 동일한 내용 작성가능</li>
+    <li><code>animation-direction</code> : 애니메이션의 방향 설정 ,<code>normal</code>과 <code>alternate</code>가 있다.</li>
+</ul>
+
+**주의할 점은 animation의 단축속성 작성법이다. 순서는 <code>animation: example duration timing-function delay iteration-count direction fill-mode;</code>이며 <code>duration</code>과 <code>delay</code>는 안 쓰더라고 꼭 작성 필요!**
 </body>
 </html>
