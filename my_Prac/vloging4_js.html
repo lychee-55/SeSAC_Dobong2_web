@@ -1,0 +1,144 @@
+### JS의 참조 방식
+
+JS의 참조방식으로는 2가지가 있습니다. <b>내장방식</b>과 <b>링크방식</b>입니다.
+
+#### JS 내장방식 :
+```
+<script>
+    console.log('이것은 내장방식 입니다.')
+</script>
+```
+
+#### JS 링크방식 : 
+```
+<script src="./JS파일링크"></script>
+```
+
+두 방식 다 어디서나 사용가능하나, <code>head태그</code>안에 링크방식을 사용할 경우 <code>script</code>에 defer을 사용하는 것을 권장합니다. 
+문서의 읽기 순서는 읽히는 순서에 따라서 작동하게 됩니다!
+
+### JS 표기법 
+
+JS에 권장되는 표기법은 아래와 같이 3개가 있습니다. 
+<ul>
+    <li><code>snake_case</code> : HTML과 CSS에서 사용하는 표기법이지만 자바스크립트에서도 사용가능합니다.</li>
+    <li><code>camelCase</code> : 띄어쓰기마다 대문자로 변경해 사용하는 것으로, 변수나 함수에는 <code>camelCase</code> 혹은 <code>snake_case</code>를 사용합니다.</li>
+    <li><code>PascalCase</code> : 모든 앞자리를 대문자로 사용하는 것으로, 인터페이스나 클래스를 만들때 사용합니다.</li>
+</ul>
+
+#### 중요!
+Javascript는 0기반 번호매기기로 작동되기에 모든 순서를 읽을때 <b>1이 아닌 0부터 읽기 시작</b>한다는 것을 명심하자!
+
+
+### Javascript의 데이터 종류(자료형)
+
+Javascript에서 배운 데이터 종류는 총 7가지가 있었습니다. 
+<ul>
+    <li><code>String</code> : <code>String</code>은 문자열로 따옴표를 사용하는 문자형 데이터를 뜻한다.</li>
+    <li><code>Number</code> : <code>Number</code>는 정수 및 소수점 숫자를 나타내는 숫자형 데이터를 뜻한다</li>
+    <li><code>Boolean</code> : <code>Boolean</code>true와 false 이 두가지 값만 가지는 참,거짓 데이터를 뜻한다.</li>
+    <li><code>Undefined</code> : <code>Undefined</code>는 값이 할당되지 않은 상태를 표기하는 미할당 데이터입니다.</li>
+    <li><code>Null</code> : <code>Null</code>은 의도적으로 비어있음을 뜻하는 데이터 입니다.</li>
+    <li><code>Object</code> : <code>Array</code>는 여러 데이터(다른 데이터 타입도 가능)를 한 번에 꾸려주는 배열 데이터 입니다. 접근법은 <code>[]</code>이며, 숫자 순서는 <code>[0]</code>부터 시작합니다.</li>
+    <li><code>Array</code> : <code>Object</code>는 데이터 꾸러미로, 작성순서는 중요치 않습니다. 접근 방식은 <code>{}</code>이며, 값에 접근할 때는 <code>key</code>의 이름으로 접근합니다.</li>
+</ul>
+
+* 추가로 typeof는 해당 자료형이 어떤것인지 알려주는 것으로 <code>Null</code>과 <code>Array</code>는 <code>Object</code> 자료형으로 나옵니다.
+
+### JS의 형변환
+
+JS는 자동으로 형변환을 하기 때문에 자동 형변환에 의존하지 않고 직접 형변환을 해줘야 더 좋다고 합니다. 
+<ul>
+    <li><code>String()</code> : 문자로 형변환 해줍니다.</li>
+    <li><code>Number()</code> : 숫자로 형변환 해줍니다.</li>
+</ul>
+
+* 추가로 <code>prompt()</code>는 입력 받은 값을 모두 문자로 저장하기에 숫자열로 이용할 시 꼭 형변환 해줘야 합니다!!
+
+### JS의 변수!
+
+지금 ES6문법에서 권장하는 변수는 <code>let</code>과 <code>const</code>입니다.
+<ul>
+    <li><code>let</code> : <code>let</code>은 변수를 선언할 때 사용하는 코드로, 재사용이 가능하고, <b>값의 재할당</b> 또한 가능합니다.</li>
+</ul>
+```
+let a = 1
+let b = 2
+
+console.log(a)  // 1
+console.log(b)  // 2
+
+a = 3
+console.log(a)  // 3
+// 이렇게 재할당 가능
+```
+<ul>
+    <li><code>const</code> : <code>const</code>는 값의 재할당이 불가능합니다!</li>
+</ul>
+
+
+### JS의 연산자!
+JS의 연산자로는 기본, 비교, 논리 총 3가지 연산자를 배웠습니다.
+
+<ul>
+    <li>기본 연산자</li>
+    <ul>
+        <li><code>%</code> : 나머지 연산자, <code>num % 2 == 1</code> 이면 <b>홀수</b>, <code>num % 2 == 0</code>이면 <b>짝수</b>입니다.</li>
+        <li><code>**</code> : 거듭 제곱을 뜻합니다.</li>
+        <li>증가, 감소 연산자 : <code>Num++</code>은 증가, <code>Num--</code>은 감소 연산자 입니다.</li>
+    </ul>
+    <li>비교 연산자</li>
+    <ul>
+        <li>일치 연산자 : 변수의 값과 자료형을 비교할 수 있는 연산자 입니다.</li>
+        <ul>
+            <li><code>A == B</code> : A와 B의 값이 같으면 true, 아니면 false</li>
+            <li><code>A === B</code> : A와 B의 값과 자료형이 같으면 true, 아니면 false</li>
+            ```
+            let a = 1
+            let b = "1"
+
+            console.log(a == b)  // 값이 같아 true
+            console.log(a === b)  // 값과 자료형중 자료형이 같지 않아 false
+            ```
+            <li><code>A != B</code> : A와 B의 값이 다르면 true, 아니면 false</li>
+            <li><code>A !== B</code> : A와 B의 값과 자료형이 다르면 true, 아니면 false</li>
+        </ul>
+    </ul>
+    <li>논리 연산자</li>
+    <ul>
+        <li><code>||</code> : or로 해석함, 여러개 중 하나라도 true면 true, 모든 값이 false면 false</li>
+        <li><code>&&</code> : and로 해석함, 모든 값이 true면 true, 하나라도 false면 false</li>
+        <li><code>!</code> : true면 false, false면 true</li>
+    </ul>
+</ul>
+
+### JS의 함수
+함수란 특정 동작을 수행하는 코드의 집합이라고 한다. 함수릐 선언방식으로는 3가지가 있는데 아래 코드와 함께 배워보자!
+
+#### 함수 선언문 :
+```
+function sayName(){
+    console.log('이것은 함수 선언문 입니다.') 
+}
+```
+
+#### 함수 표현식 :
+```
+let sayName = function(){
+    console.log('이것은 함수 표현식 입니다.') 
+}
+```
+
+#### 화살표 함수 :
+```
+let sayName = (a,b)=>{
+    return a + b
+}
+
+// 혹은
+let showError = () =>{
+    alert('error!')
+}
+```
+
+* 위 세가지 사용시 주의할 점은 호출방식 입니다! 함수 선언문은 어디서나 호출 가능하지만 함수 표현식은 코드에 도달해야 생성 및 사용가능합니다. 화살표 함수는 선언후에 호출이 가능하다는 것을 잊지 말자!
