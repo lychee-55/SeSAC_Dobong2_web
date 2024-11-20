@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제 2</title>
+  </head>
+  <body>
+    <h1>실습문제 2</h1>
+    <form action="/practice2" method="post">
+      <label for="name">
+        이름 <input type="text" name="name" id="name" required title="이름을 적어주세요!">
+      </label>
+      <br>
+      <fieldset>
+        <legend>성별</legend>
+        <label><input type="radio" name="man" required> 남자</label>
+        <label><input type="radio" name="woman" required> 여자</label>
+      </fieldset>
+
+      <br>
+      <fieldset>
+        <legend>생년월일</legend>
+        <label for="year">
+          <select id="year" name="year">
+            <option value=""></option>
+          </select>년</label>
+
+        <label for="month">
+          <select id="month" name="month">
+            <option value=""> </option>
+          </select>월</label>
+
+        <label for="day">
+          <select id="day" name="day">
+            <option value=""> </option>
+          </select>일</label>
+      </fieldset>
+
+      <br>
+      <fieldset>
+        <legend>관심사</legend>
+        <label><input type="checkbox" name="like" value="travel">여행</label>
+        <label><input type="checkbox" name="like" value="fashion">패션</label>
+        <label> <input type="checkbox" name="like" value="food">음식</label>
+      </fieldset>
+
+      <br>
+      <fieldset>
+        <legend>선택</legend>
+        <label>좋아하는 색상 <input type="color" name="color"></label>
+        <br>
+        <label>좋아하는 숫자 <input type="textarea" name="txtnum"></label>
+      </fieldset>
+
+      <button>회원가입</button>
+    </form>
+  </body>
+</html>

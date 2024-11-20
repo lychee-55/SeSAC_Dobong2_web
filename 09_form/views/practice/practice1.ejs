@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제 1</title>
+  </head>
+  <body>
+    <h1>실습문제1</h1>
+    <form action="/practice1" method="get">
+      <label for="name">
+        이름 <input type="text" name="name" id="name">
+      </label>
+      <br>
+      <fieldset>
+        <legend>성별</legend>
+        <label for="gender"><input type="radio" name="man" id="gender"> 남자</label>
+        <label for="gender"><input type="radio" name="woman" id="gender"> 여자</label>
+      </fieldset>
+
+      <br>
+      <fieldset>
+        <legend>생년월일</legend>
+
+        <select id="year" name="year">
+          <option value="">선택</option>
+        </select><label for="year">년</label>
+
+        <select id="month" name="month">
+          <option value="">선택</option>
+        </select><label for="month">월</label>
+
+        <select id="day" name="day">
+          <option value="">선택</option>
+        </select><label for="day">일</label>
+      </fieldset>
+
+      <br>
+      <fieldset>
+        <legend>관심사</legend>
+        <label><input type="checkbox" name="like" value="travel">여행</label>
+        <label><input type="checkbox" name="like" value="fashion">패션</label>
+        <label> <input type="checkbox" name="like" value="food">음식</label>
+      </fieldset>
+      <br>
+      <button>회원가입</button>
+    </form>
+
+    <script>
+      const selecYear = document.getElementById('year')
+      //   console.log(selecYear)
+      const currentY = new Date().getFullYear()
+      for (let year = 1990; year <= currentY; year++) {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        selecYear.append(option);
+      }
+
+      const selecMonth = document.getElementById('month')
+      for (let month = 1; month <= 12; month++) {
+        const option = document.createElement('option');
+        option.value = month;
+        option.textContent = month;
+        selecMonth.append(option);
+      }
+
+      const selecDay = document.getElementById('day')
+      for (let day = 1; day <= 31; day++) {
+        const option = document.createElement('option');
+        option.value = day;
+        option.textContent = day;
+        selecDay.append(option);
+      }
+    </script>
+  </body>
+</html>
