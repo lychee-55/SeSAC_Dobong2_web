@@ -66,8 +66,20 @@ app.get("/practice2", (req, res) => {
 });
 
 // 3. 주소 지정 form GET 요청
+app.get("/practice_result", (req, res) => {
+  console.log("get요청 데이터", req.query);
+  res.render("practice/practice_result", {
+    userInfo: req.query,
+  });
+});
 
 // 4. 주소 지정 form POST 요청
+app.post("/practice_result", (req, res) => {
+  console.log("post요청 데이터", req.body);
+  res.render("practice/practice_result", {
+    userInfo: req.body,
+  });
+});
 
 // API 4개 작업해야함
 

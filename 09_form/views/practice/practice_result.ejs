@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>결과 확인하기</title>
+    <style>
+      span {
+        color: coral;
+      }
+    </style>
   </head>
   <body>
     <h1>결과 확인하기</h1>
-    <h3><%=userInfo.name%>님 환영합니다!</h3>
+    <h3><span><%=userInfo.name%></span>님 환영합니다!</h3>
     <p>성별:<%=userInfo.gender%></p>
-    <p>생년월일: </p>
-    <p>관심사 :</p>
+    <p>생년월일: <%=userInfo.year%>/<%=userInfo.month%>/<%=userInfo.day%>
+    </p>
+    <p>관심사 :<%=userInfo.like%></p>
     <hr>
     <h3>다른 태그 작성해보기</h3>
-    <p>좋아하는 색깔</p>
-    <p>좋아하는 숫자</p>
-    <p>다짐 한마디</p>
+    <p>좋아하는 색깔 :<%=userInfo.color%></p>
+    <p>좋아하는 숫자 : <span><%=userInfo.number%></span></p>
+    <p>다짐 한마디 : <span><%=userInfo.one%></span></p>
   </body>
 </html>
