@@ -66,7 +66,7 @@ app.get("/practice2", (req, res) => {
 });
 
 // 3. 주소 지정 form GET 요청
-app.get("/practice_result", (req, res) => {
+app.get("/practice1_get", (req, res) => {
   console.log("get요청 데이터", req.query);
   res.render("practice/practice_result", {
     userInfo: req.query,
@@ -74,7 +74,7 @@ app.get("/practice_result", (req, res) => {
 });
 
 // 4. 주소 지정 form POST 요청
-app.post("/practice_result", (req, res) => {
+app.post("/practice2_post", (req, res) => {
   console.log("post요청 데이터", req.body);
   res.render("practice/practice_result", {
     userInfo: req.body,
@@ -86,3 +86,4 @@ app.post("/practice_result", (req, res) => {
 app.listen(PORT, function () {
   console.log(`http://localhost:${PORT}`);
 });
+// 항상 정보를port에서 받아오는 중

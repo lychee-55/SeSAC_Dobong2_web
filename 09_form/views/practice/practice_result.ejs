@@ -1,26 +1,52 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>결과 확인하기</title>
     <style>
       span {
         color: coral;
+        font-weight: 700;
+      }
+
+      .colorpick {
+        display: inline;
+        /* color: <%#=userInfo.color%>; */
+      }
+
+      .box {
+        border: 1px solid gray;
+        border-radius: 10px;
+        margin: 1px;
+        padding: 5px;
       }
     </style>
   </head>
   <body>
     <h1>결과 확인하기</h1>
     <h3><span><%=userInfo.name%></span>님 환영합니다!</h3>
-    <p>성별:<%=userInfo.gender%></p>
-    <p>생년월일: <%=userInfo.year%>/<%=userInfo.month%>/<%=userInfo.day%>
-    </p>
-    <p>관심사 :<%=userInfo.like%></p>
-    <hr>
+    <div class="box">성별: <%=userInfo.gender%></div>
+    <div class="box">
+      생년월일: <%=userInfo.year%>/<%=userInfo.month%>/<%=userInfo.day%>
+    </div>
+    <div class="box">관심사: <%=userInfo.like%></div>
+    <hr />
     <h3>다른 태그 작성해보기</h3>
-    <p>좋아하는 색깔 :<%=userInfo.color%></p>
+    <p>
+      좋아하는 색깔 :
+      <span class="colorpick"> <%=userInfo.color%> </span>
+    </p>
     <p>좋아하는 숫자 : <span><%=userInfo.number%></span></p>
     <p>다짐 한마디 : <span><%=userInfo.one%></span></p>
+
+    <br /><br />
+    <a href="/">홈으로 이동하기</a>
+
+    <script>
+      const colorElement = document.querySelector(".colorpick");
+
+      colorElement.style.color = "<%= userInfo.color %>";
+    </script>
   </body>
 </html>
