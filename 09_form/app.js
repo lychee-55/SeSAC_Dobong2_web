@@ -54,6 +54,8 @@ app.post("/js-form-check", function (req, res) {
 // practice1,practice2.ejs에는 각각 get,post를 통한 폼 요청이 있고
 // 결과 페이지는 practice_result.ejs를 공통으로 사용
 
+
+/* 내가 푼 내용
 // 1. /practice1에 대한 GET 요청
 app.get("/practice1", (req, res) => {
   console.log(req.query);
@@ -82,6 +84,46 @@ app.post("/practice2_post", (req, res) => {
 });
 
 // API 4개 작업해야함
+*/
+
+// 리더님 풀이
+// 1. /practice1에 대한 GET 요청
+app.get("/reprac1", (req, res) => {
+  console.log(req.query);
+  res.render("practice/reprac1");
+});
+
+// 2. /practice2에 대한 GET요청
+app.get("/reprac2", (req, res) => {
+  res.render("practice/reprac2");
+});
+
+// 3. 주소 지정 form GET 요청
+app.get("/reprac1_get",(req,res)=>{
+  // console.log(req.query);
+  /*
+  {
+    name: 'asdaf',
+    gender: '남자',
+    year: '1980',
+    month: '1',
+    date: '1',
+    favorite: '패션'
+  }
+    */
+  res.render("practice/reprac_result",{
+    userInfo: req.query,
+    addInfo: false, // reprac1에서는 적은 정보를 주고있음.
+  })
+});
+// 4. 주소 지정 form POST 요청
+app.post("/reprac2_post",(req,res)=>{
+  console.log(req.body)
+  res.render("practice/reprac_result",{
+    userInfo: req.body,
+    addInfo: true,
+  })
+})
 
 app.listen(PORT, function () {
   console.log(`http://localhost:${PORT}`);

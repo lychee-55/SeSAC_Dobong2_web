@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습결과 페이지</title>
+  </head>
+  <body>
+    <!--  reprac1.ejs 
+    {
+    name: 'asdaf',
+    gender: '남자',
+    year: '1980',
+    month: '1',
+    date: '1',
+    favorite: '패션'
+  }
+    addInfo = false
+    -->
+
+    <!-- reprac2.ejs
+    {
+  name: 'asdaf',
+  gender: '남자',
+  year: '1980',
+  month: '1',
+  date: '1',
+  favorite: '패션',  // 여기까지 처리 끝!
+  color: '#000000',
+  number: '123',
+  comment: 'qqqqqq'
+}
+  addInfo = true
+    -->
+    <h3>실습문제 응답 페이지</h3>
+    <h3><%=userInfo.name%>님 환영합니다.</h3>
+    <ul>
+      <li>성별 : <%=userInfo.gender%></li>
+      <li>
+        생년월일 : <%=userInfo.year%>/<%=userInfo.month%>/<%=userInfo.date%>
+      </li>
+      <li>관심사 : <%=userInfo.favorite%></li>
+    </ul>
+    <!-- 조건 그자체가 true혹은 false가 올때 -->
+    <% if(addInfo){ %>
+    <p>좋아하는 색깔 : <span class="color"><%=userInfo.color%></span></p>
+    <p>좋아하는 숫자 : <%=userInfo.number%></p>
+    <p>다짐 한마디 : <%=userInfo.comment%></p>
+    <% } %>
+
+    <script>
+      // DOMContentLoaded는 해당 document가 로드 되는 순간을 의미
+      document.addEventListener("DOMContentLoaded", function () {
+        const colorSpan = document.querySelector(".color");
+        colorSpan.style.color = "<%=userInfo.color%>";
+        // 자바스크립트에서도 ejs사용 가능, 대신 문자열로 사용해야함.
+      });
+    </script>
+  </body>
+</html>
