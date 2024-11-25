@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습문제 2</title>
+
+    <!-- axios CDN -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <style>
+      label {
+        display: flex;
+      }
+
+      span {
+        width: 80px;
+      }
+
+      .success {
+        color: blue;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      .error {
+        color: red;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="login">
+      <label for="userID">
+        <span>아이디</span> <input type="text" name="id" id="userID" required
+      /></label>
+      <label for="userPW">
+        <span>비밀번호</span>
+        <input type="password" name="pw" id="userPW" required
+      /></label>
+      <br />
+      <button type="button" onclick="axiosPost()">로그인</button>
+    </form>
+
+    <div class="login-result"></div>
+
+    <script>
+      function axiosPost() {
+        const form = document.forms["login"];
+        const resultdiv = document.querySelector(".login-result");
+        const data = {
+          userID: form.userID.value,
+          userPW: form.userPW.value,
+        };
+
+        console.log(data);
+
+        // axios 요청 하기전에 유효성 검증
+        console.log(form.userID.checkValidity());
+        console.log(form.userPW.checkValidity()); // true, false 확인 바람.
+        if (!form.userID.checkValidity() || !form.userPW.checkValidity()) {
+          resultdiv.innerText = "아이디와 비밀번호는 필수입니다.";
+          return;
+        }
+
+        axios({
+          method: "post",
+          url: "/axios-practice2",
+          data: data, // 키이름data: 선언한 data
+        }).then((res) => {
+          console.log(res.data);
+          // {isSuccess: false}
+          // {isSuccess: true, userID}
+          if (res.data.isSuccess) {
+            resultdiv.textContent = `${res.data.userID}님 로그인 성공~!`;
+            resultdiv.classList.add("success");
+            resultdiv.classList.remove("error");
+          } else {
+            resultdiv.textContent = `아이디 또는 패스워드 오류에요ㅜㅜ`;
+            resultdiv.classList.add("error");
+            resultdiv.classList.remove("success");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>외부 API 사용</title>
+
+    <!-- axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <!-- 다른사람의 api를 가져다 쓸 수 있음. send를 받아서 사용 -->
+    <h1>간단 Open API 사용하기</h1>
+
+    <h3>고양이 사진 바꾸기</h3>
+    <img src="" alt="기본 이미지" id="img" />
+    <button onclick="changeCatImg();">고양이 사진 변경</button>
+
+    <h3>영화 정보 가져오기</h3>
+    <ul>
+      <!-- <div>
+            <img src="영화 이미지" alt="">
+            <p>영화제목</p>
+        </div> -->
+    </ul>
+
+    <script>
+      // https://api.thecatapi.com/v1/images/search
+      function changeCatImg() {
+        fetch("https://api.thecatapi.com/v1/images/search") // fetch의 기본값은 get임.
+          .then(function (res) {
+            console.log(res);
+            return res.json(); // 위 url은 배열 형태 object로 주고 있기에 json사용
+          })
+          .then(function (data) {
+            console.log(data); // [{id, url, width, height,...}]처럼 배열로 들어오고 있는중
+            const img = document.getElementById("img");
+            img.src = data[0].url;
+            img.alt = `${data[0].id}-cat-img`;
+            img.width = 400;
+          });
+      }
+
+      /* 영화 api
+         https://www.omdbapi.com/ ,
+         api key: 56fd649b,
+         http://www.omdbapi.com/?apikey=56fd649b&s=
+       */
+      const word = "iron";
+      axios({
+        method: "get",
+        url: "http://www.omdbapi.com/?i=tt3896198&apikey=56fd649b&s=" + word,
+      }).then((res) => {
+        //   console로 데이터가 어떤 형식으로 오는건지 확인이 필요
+        console.log(res.data); //객체{search, totalResults, Response}
+        // 배열 {Poster, Title, Type, Year, imdbID}[]
+        console.log(res.data.Search);
+
+        const container = document.querySelector("ul");
+        // 혹은 const로 res.data.Search 선언후 for문 사용 ↓
+        for (let movie of res.data.Search) {
+          //   console.log(movie.Title); //영화 제목
+          //   console.log(movie.Poster); // 이미지 정보
+          //   console.log(movie.imdbID); // 고유 ID
+          const div = document.createElement("div");
+          const img = document.createElement("img");
+          const p = document.createElement("p");
+
+          img.src = movie.Poster;
+          img.alt = movie.imdbID + "movie image";
+
+          p.innerText = movie.Title;
+          div.append(img, p);
+          container.append(div);
+        }
+        // Open API는 어떻게 데이터를 받는지 어떻게 나타내는지가 관건. 복습필요!
+      });
+    </script>
+  </body>
+</html>
