@@ -16,7 +16,8 @@ app.use(express.json()); // json형식으로 주고 받겠다
 /* 요청 > 응답 */
 app.get("/", function (req, res) {
   console.log("nodemon 실행!!");
-  res.render("index"); // /경로로 들어오면 index.ejs를 보여주는 중, views로 설정을 해줬기에 .ejs안 써도 됨.
+  res.render("index"); 
+  // /경로로 들어오면 index.ejs를 보여주는 중, views로 설정을 해줬기에 .ejs안 써도 됨.
 });
 
 // form GET 요청

@@ -128,7 +128,8 @@ app.post('/uploads/fields',uploadDetail.fields([{name:'file1'},{name:'file2'},{n
 
 // 동적폼 파일 업로드
 app.post('/dynamicUpload',uploadDetail.single('dynamicFile'),(req,res)=>{ // single(append에 넣은 이름과 똑같아야함.)
-    console.log(req.file)
+    console.log(req.file)  // 파일 정보
+    console.log(req.body)  // 파일 외 기타정보(text)
     /*
     {
   fieldname: 'dynamicFile',
@@ -141,7 +142,9 @@ app.post('/dynamicUpload',uploadDetail.single('dynamicFile'),(req,res)=>{ // sin
   size: 44357
 }
   */
-    res.send(req.file)
+    // 하나의 객체에 합쳐서 보내는 방법 (전개연산자)
+    // res.send({...req.body,...req.file}) // 이렇게 합쳐서 보낼수 있음. 혹은 ↓
+    res.send({file: req.file, fileInfo: req.body})
 })
 
 app.listen(PORT,()=>{
