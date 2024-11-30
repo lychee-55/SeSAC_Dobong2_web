@@ -1,0 +1,10 @@
+package_json:
+
+"name": "99_express_blog" -- 파일 이름
+"main": "app.js"          -- 작동할 파일 이름
+"scripts"                 -- 실행 코드 
+
+
+
+명령크롬프트:
+npm install -- npm이 dependencies를 보고 다시 node_module을 추가 설치해줌(node_module이 삭제 될 때)

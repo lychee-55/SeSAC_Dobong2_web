@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title%></title>
+    <%-include("./include/head")%>
+    <style>
+      p {
+        white-space: pre-line;
+        /* 엔터처리 가능하게 만듬 */
+      }
+    </style>
+  </head>
+  <body>
+    <%-include("./include/header")%>
+    <div>
+      <h2><%=title%></h2>
+      <p><%=content%></p>
+      <%if(img){%>
+      <img src="<%=img%>" alt="<%=contentID%>번 이미지" width="300" />
+      <% } %>
+    </div>
+  </body>
+</html>

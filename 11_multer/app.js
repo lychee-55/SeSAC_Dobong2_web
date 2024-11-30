@@ -1,3 +1,4 @@
+const { spawn } = require('child_process');
 const express= require('express');
 const multer = require("multer");
 const path = require("path")
@@ -121,7 +122,7 @@ app.post('/uploads/fields',uploadDetail.fields([{name:'file1'},{name:'file2'},{n
     console.log(req.files)
     console.log(req.body)
     /*
-        {파일name1:[{업로드 파일 정보}], 파일name2:[{업로드 파일 정보}],...} 
+        {파일name1(=name 키의 값):[{업로드 파일 정보}], 파일name2:[{업로드 파일 정보}],...} 
     */
     res.send('업로드 완료!')
 })
@@ -150,3 +151,4 @@ app.post('/dynamicUpload',uploadDetail.single('dynamicFile'),(req,res)=>{ // sin
 app.listen(PORT,()=>{
     console.log(`http://localhost:${PORT}`)
 })
+

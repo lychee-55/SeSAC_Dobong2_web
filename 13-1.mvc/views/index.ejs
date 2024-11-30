@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MVC실습</title>
+
+    <style>
+      .text {
+        width: 80px;
+      }
+
+      .warn {
+        color: red;
+        font-weight: 700;
+      }
+
+      .suc {
+        color: blue;
+        font-weight: 700;
+      }
+    </style>
+
+    <!-- axios CDN -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>MVC 실습</h1>
+    <form name="login">
+      <label for="userID">
+        <span class="text">아이디</span>
+        <input type="text" name="id" id="userID" required
+      /></label>
+      <br />
+      <label for="userPW">
+        <span class="text">비밀번호</span>
+        <input type="password" name="pw" id="userPW" required
+      /></label>
+      <br />
+      <button type="button" onclick="axiosPost()">로그인</button>
+      <button type="reset">리셋</button>
+    </form>
+
+    <div class="login-result"></div>
+
+    <script>
+      function axiosPost() {
+        const form = document.forms["login"];
+        const Rdiv = document.querySelector(".login-result");
+        const data = {
+          userID: form.userID.value,
+          userPW: form.userPW.value,
+        };
+
+        console.log(form.userID.checkValidity());
+        console.log(form.userPW.checkValidity());
+        if (!form.userID.checkValidity() || !form.userPW.checkValidity()) {
+          Rdiv.textContent = "아이디와 패스워드는 필수 입력입니다.";
+          Rdiv.classList.add("warn");
+          return;
+        }
+        axios({
+          method: "post",
+          url: "/axiosPost",
+          data: data,
+        }).then((res) => {
+          if (res.data.Success) {
+            Rdiv.textContent = `${res.data.userID}님 환영합니다!`;
+            Rdiv.classList.add("suc");
+            Rdiv.classList.remove("warn");
+          } else {
+            Rdiv.textContent = `아이디 또는 패스워드 오류..🥺`;
+            Rdiv.classList.remove("suc");
+            Rdiv.classList.add("warn");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main page</title>
+    <%-include("./include/head")%>
+  </head>
+  <body>
+    <!-- 
+    contentData: [
+    c = {
+        contentID:1,
+        title:"제목1",
+        content: "토요일 수업..",
+        img:null
+    }]
+    
+    user: "lychee냠" 
+    -->
+    <%-include("./include/header")%>
+    <h1>안녕하세요!! <%= user%>의 블로그에 온 것을 환영합니다!</h1>
+
+    <ul>
+      <!-- 배열이라 for of문 사용 -->
+      <%for(let c of contentData){%>
+      <li>
+        <a href="/content/<%=c.contentID%>"><%=c.title%></a>
+        <button type="button" onclick="deleteContent('<%=c.contentID%>',this)">
+          삭제하기
+        </button>
+      </li>
+      <% } %>
+    </ul>
+
+    <script>
+      function deleteContent(contentID, btn) {
+        console.log(contentID);
+        console.log(btn);
+        if (confirm("정말 삭제하시겠습니까?")) {
+          // 삭제요청
+          axios({
+            method: "delete",
+            // delete도 쿼리에 담을 수 있음.
+            url: `/blog/delete?contentID=${contentID}`,
+          })
+            .then((res) => {
+              console.log(res);
+              console.log(btn.parentNode); // 버튼의 부모(li)에 접근
+              btn.parentNode.remove();
+            })
+            .catch((err) => {
+              console.error("err", err);
+            });
+        }
+      }
+    </script>
+  </body>
+</html>
