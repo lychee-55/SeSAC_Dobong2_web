@@ -8,6 +8,7 @@ app.set("views","./views")
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 
+// 라우트 불러오기 
 const indexRouter = require("./routes/user")
 app.use('/',indexRouter)
 

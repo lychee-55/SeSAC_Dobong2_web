@@ -7,10 +7,14 @@ exports.main = (req,res)=>{
 
 // POST - /axiosPost
 exports.axiosPost = (req,res)=>{
+    console.log(req.body)
 
-    if(realID === req.body.userID && realPW === req.body.userPW){
-        res.send({Success : true, userID : req.body.userID})
-    }else{
-        res.send({Success: false})
-    }
+    // 객체 구조 분해 추가
+    const{realID, realPW} = User.getUserInfo()  // { realID: 'lychee', realPW: '1234' }
+    
+    // if(realID === req.body.userID && realPW === req.body.userPW){
+    //     res.send({Success : true, userID : req.body.userID})
+    // }else{
+    //     res.send({Success: false})
+    // }
 }

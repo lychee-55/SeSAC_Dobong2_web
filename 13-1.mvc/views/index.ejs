@@ -56,7 +56,7 @@
         console.log(form.userPW.checkValidity());
         if (!form.userID.checkValidity() || !form.userPW.checkValidity()) {
           Rdiv.textContent = "아이디와 패스워드는 필수 입력입니다.";
-          Rdiv.classList.add("warn");
+          // Rdiv.classList.add("warn");
           return;
         }
         axios({
