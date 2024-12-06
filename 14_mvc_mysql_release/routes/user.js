@@ -13,7 +13,7 @@ router.get("/signin", controller.getSignin)
 // POST /user/signin
 router.post("/signin", controller.postSignin)
 
-router.post("/profile", controller.profile)
+router.post("/profile", controller.post_profile)
 
 router.patch("/profile/edit", controller.editProfile)
 

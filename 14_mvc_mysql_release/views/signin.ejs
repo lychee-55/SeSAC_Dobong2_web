@@ -55,10 +55,7 @@
               form_info.submit();
             } else {
               alert("로그인 실패!");
-              form.userid.value = "";
-              form.pw.value = "";
-              form_info.reset();
-              return;
+              form.reset();
             }
           })
           .catch((err) => {
