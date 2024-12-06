@@ -18,7 +18,7 @@ SELECT * FROM visitor;
 --data 수정
 UPDATE visitor SET comment="야호!" WHERE id=2;
 --data 삭제
-DELETE FROM visitor WHERE id=3;
+DELETE FROM visitor WHERE id=6;
 
 ############## DCL ##############
 --MySQL 사용자 생성

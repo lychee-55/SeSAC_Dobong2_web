@@ -4,15 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>방명록페이지</title>
+    <!-- axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer src="/static/front_visitor.js"></script>
   </head>
   <body>
     <h2>방명록 페이지</h2>
     <form name="visitor-form">
       <fieldset>
         <legend>방명록 등록</legend>
-        <input type="text" name="name" placeholder="사용자 이름" />
-        <input type="text" name="comment" placeholder="간단한 방명록 작성" />
-        <button type="button">방명록 등록</button>
+        <input type="text" name="name" placeholder="사용자 이름" /><br>
+        <input type="text" name="comment" placeholder="간단한 방명록 작성" /><br>
+        
+        <div id="btn-group"><button type="button" onclick="createVisitor()">방명록 등록</button></div>
       </fieldset>
     </form>
 
@@ -41,12 +45,12 @@
         </tr> -->
         <!-- Cvisitor에서 data를 보내줬기에 여기서 data사용 가능 -->
         <%for(let i=0; i<data.length;i++){%> 
-          <tr>
+          <tr id="tr_<%=data[i].id%>">
             <td><%=data[i].id%></td>
             <td><%=data[i].name%></td>
             <td><%=data[i].comment%></td>
-            <td><button>수정</button></td>
-            <td><button>삭제</button></td>
+            <td><button onclick="editVisitor(`<%=data[i].id%>`)">수정</button></td>
+            <td><button onclick="deleteVisitor(this,`<%=data[i].id%>`)">삭제</button></td>
           </tr>
           <%}%>
       </tbody>

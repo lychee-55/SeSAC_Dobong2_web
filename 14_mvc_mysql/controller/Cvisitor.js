@@ -18,3 +18,41 @@ exports.getVisitors = (req,res)=>{
         res.render("visitors",{data : result})
     })
 }
+
+/* /visitor/:id GET */
+exports.getVisitor = (req,res)=>{
+    console.log(req.params) // {id:"1"}
+    console.log(req.params.id) // {"1"}
+    Visitor.getVisitor(req.params.id, (result)=>{
+        console.log("한 개의 데이터 Cvisitor.js:",result)
+        res.send(result)
+    })
+    // res.send("response")
+}
+
+/* /visitor POST 등록 */
+exports.postVisitor = (req,res)=>{
+    console.log(req.body)
+    Visitor.postVisitor(req.body,(result)=>{
+        console.log("Cvisitor.js",result)
+        res.send({id: result, comment: req.body.comment, name: req.body.name})
+    })
+}
+/* /visitor DELETE 삭제 */
+exports.deleteVisitor=(req,res)=>{
+    console.log(req.body) // { id: '3' }
+    console.log(req.body.id) // "3"
+    Visitor.deleteVisitor(req.body.id,()=>{
+        res.send(req.body.id + "+번 id삭제완료!")
+    })
+    // res.send("response!")
+}
+
+/* /visitor PATCH 수정 */
+exports.patchVisitor=(req,res)=>{
+    console.log(req.body)
+    // res.send("response patch!")
+    Visitor.patchVisitor(req.body,()=>{
+        res.send("수정완료")
+    })
+}
