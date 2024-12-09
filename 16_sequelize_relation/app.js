@@ -16,7 +16,7 @@ app.use("/",indexRouter)
 
 // sync()
 sequelize
-    .sync({ force:false })
+    .sync({ force: false }) // 테이블을 만들때는 true로 켜두고 테이블에insert할때는 false로 바꿔둬야함.
     .then(()=>{
         console.log("DB connection success!")
         app.listen(PORT,()=>{
