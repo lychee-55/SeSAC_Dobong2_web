@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <%- include('include', {title: 'Login'}) %>
+    <link rel="stylesheet" href="/static/login.css" />
+  </head>
+  <body>
+    <div class="login-box">
+      <h1>로그인</h1>
+      <p>
+        참고! 정답 아이디는 <b>cocoa</b> 이고<br />
+        비밀번호는 <b>1234</b> 입니다.
+      </p>
+
+      <!-- 폼전송으로 로그인 진행 -->
+      <form action="/login" method="POST">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="id">ID</span>
+          <input
+            type="text"
+            class="form-control"
+            aria-label="id input"
+            aria-describedby="id"
+            name="id"
+          />
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="pw">PW</span>
+          <input
+            type="password"
+            class="form-control"
+            aria-label="pw input"
+            aria-describedby="pw"
+            name="pw"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-dark">Login</button>
+        <br />
+        <a href="/">Home 이동하기</a>
+      </form>
+    </div>
+
+    <!-- <script>
+      const form = document.querySelector("form");
+      // const id = document.querySelector('input[name="id"]');
+      // const pw = document.querySelector('input[name="pw"]');
+      const userInfo = {
+        userId: "cocoa",
+        userPw: "1234",
+      };
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const data = await axios({
+          method: "post",
+          data: data,
+          url: "/login",
+        });
+
+        const { userId, userPw } = userInfo;
+        const { id, pw } = data;
+
+        if (req.body.id === userId && req.body.pw === userPw) {
+          res.send({ isLogin: true, userId: req.body.id });
+        } else {
+          res.send({ isLogin: false });
+        }
+      });
+    </script> -->
+    <!-- <script>
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const response = await fetch("/login", {
+          method: "POST",
+          body: formData,
+        });
+
+        const result = await response.json();
+
+        if (!result.success) {
+          alert(result.message);
+        } else {
+          window.location.href = "/"; // 로그인 성공 시 홈으로 이동
+        }
+      }); -->
+    </script>
+  </body>
+</html>
