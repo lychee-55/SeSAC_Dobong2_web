@@ -7,30 +7,24 @@ const PORT= 8080
 app.set("view engine","ejs")
 
 // TODO: 쿠키 미들웨어 설정
-app.use(cookieParser())
-
-const cookieConfig={
-    maxAge: 24*60*60*1000,
-    expires:new Date(2024,12,10),
-    httpOnly: true,
-    signed: false,
-
-}
+app.use(cookieParser("secret"))
 
 app.get("/",(req,res)=>{
-    if(req.cookies){
-        res.render("index",{popup : req.cookies.pracCookie})
-    }else{
-        res.render("index")
-    }
     // TODO: 쿠키 값 가져오기
-    // res.render("index", {popup:쿠키값})
+    // cookie값 접그
+    // - req.cookies : 암호화되지 않은 쿠키
+    // - req.signedCookies : 암호화 된 쿠키
+    console.log("cookies",req.signedCookies) // {}
+    res.render("index", { popup: req.signedCookies.popup })  //hide
 })
 
 app.post("/set-cookie",(req,res)=>{
     // 쿠키 생성하기
-    res.cookie("pracCookie","cookies",cookieConfig)
-    res.send("쿠키생성 성공")
+    res.cookie("popup","hide",{
+        signed: true, // 암호화된 쿠키
+        maxAge: 1000*60*60*24, // 24시간 쿠키
+    })
+    res.send("쿠키생성 성공!")
 })
 
 app.listen(PORT,()=>{
