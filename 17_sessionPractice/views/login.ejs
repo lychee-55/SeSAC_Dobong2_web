@@ -40,55 +40,6 @@
         <a href="/">Home 이동하기</a>
       </form>
     </div>
-
-    <!-- <script>
-      const form = document.querySelector("form");
-      // const id = document.querySelector('input[name="id"]');
-      // const pw = document.querySelector('input[name="pw"]');
-      const userInfo = {
-        userId: "cocoa",
-        userPw: "1234",
-      };
-
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const data = await axios({
-          method: "post",
-          data: data,
-          url: "/login",
-        });
-
-        const { userId, userPw } = userInfo;
-        const { id, pw } = data;
-
-        if (req.body.id === userId && req.body.pw === userPw) {
-          res.send({ isLogin: true, userId: req.body.id });
-        } else {
-          res.send({ isLogin: false });
-        }
-      });
-    </script> -->
-    <!-- <script>
-      const form = document.querySelector("form");
-
-      form.addEventListener("submit", async (event) => {
-        event.preventDefault();
-
-        const formData = new FormData(form);
-        const response = await fetch("/login", {
-          method: "POST",
-          body: formData,
-        });
-
-        const result = await response.json();
-
-        if (!result.success) {
-          alert(result.message);
-        } else {
-          window.location.href = "/"; // 로그인 성공 시 홈으로 이동
-        }
-      }); -->
     </script>
   </body>
 </html>
