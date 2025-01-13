@@ -1,0 +1,50 @@
+.container {
+  /* border: 1px solid gray; */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center; /* 수직 정렬 */
+  align-items: center; /* 수평 정렬 */
+}
+
+.container h3 {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  background-color: rgb(126, 178, 255);
+  color: #fff;
+}
+
+.container .list {
+  /* border: 1px solid gray; */
+}
+
+.container .lists .list {
+  border-radius: 10px;
+  margin: 15px;
+  box-shadow: 5px 5px 5px #dddd;
+  width: 500px;
+  height: 100px;
+  padding: 10px 20px;
+  background-color: rgb(243, 249, 255);
+  text-align: start;
+}
+
+.container .lists .list .title {
+  font-size: 13px;
+  margin: 5px 0px;
+}
+.container .lists .list .title .no {
+  color: rgb(99, 112, 255);
+}
+
+.container .lists .list .title .spanTitle {
+  color: gray;
+}
+.container .lists .list .body {
+  /* border: 1px solid gray; */
+  height: 65px;
+  overflow: hidden; /* 넘치는 텍스트 숨김 */
+  text-overflow: ellipsis; /* 생략 부호(...) 표시 */
+}
