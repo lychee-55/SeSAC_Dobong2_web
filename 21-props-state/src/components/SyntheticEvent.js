@@ -19,7 +19,7 @@ export default function SynthethicEvent() {
       <button onClick={synthethicEvent}>콘솔을 보세요</button>
       {/* <button onClick={callTest()}>함수 호출해서 전달</button> */}
       <br />
-      {/* 화살표 함수로 호출할 경우 인자를 안받으면 데이터 전달을 못함 */}
+      {/* 화살표 함수로 호출할 경우 인자를 안 받으면 데이터 전달을 못함 */}
       <input
         type="text"
         placeholder="글자를 입력하세요."

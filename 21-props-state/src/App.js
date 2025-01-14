@@ -18,11 +18,23 @@ import {
   PracFuncHandleEv2,
   PracFuncHandleEv3,
 } from './components/ex/PracFuncHandleEv';
+import EntirePractice from './components/practice/EntirePractice';
+import PropsMap from './components/PropsMap';
+import PropsMap2 from './components/PropsMap2';
+import Alphabet from './components/Alphabet';
+import MapPrac1 from './components/mapPrac/MapPrac1';
+import MapPrac2 from './components/mapPrac/MapPrac2';
 
 function App() {
+  const arr = [
+    { name: 'peach', krPrice: 10000, number: 5 },
+    { name: 'strawberry', krPrice: 15000, number: 1 },
+    { name: 'pear', krPrice: 5000, number: 3 },
+    { name: 'apple', krPrice: 20000, number: 15 },
+  ];
   return (
     <div>
-      <h2>Props 사용</h2>
+      {/* <h2>Props 사용</h2> */}
       {/* <h3>클래스형 컴포넌트 props 사용해보기</h3>
       <ClassProps name="루피" color="pink" nickname="공주" />
       <ClassProps2 name="루피" color="pink" nickname="공주" fontColor="white" />
@@ -38,7 +50,7 @@ function App() {
         <span style={{ color: 'red' }}>children요소 입니다!!!</span>
       </FunctionProps4> */}
 
-      <h2>State 사용</h2>
+      {/* <h2>State 사용</h2> */}
       {/* <h2>클래스형 state</h2>
       <ClassState />
       <h2>함수형 state</h2>
@@ -50,12 +62,12 @@ function App() {
       <h3>함수형</h3>
       <PracStateFunc /> */}
 
-      <h2>Event 사용</h2>
+      {/* <h2>Event 사용</h2> */}
       {/* <SynthethicEvent />
       <Counter /> */}
       <hr />
-      <h2>HandleEvent 실습문제</h2>
-      <h3>1번 문제</h3>
+      {/* <h2>HandleEvent 실습문제</h2> */}
+      {/* <h3>1번 문제</h3>
       <HandleEx />
       <hr />
       <h3>2번 문제</h3>
@@ -86,7 +98,18 @@ function App() {
             nickName: '장난꾸러기',
           },
         ]}
-      />
+      /> */}
+      {/* <h2>이벤트 실습문제</h2>
+      <EntirePractice /> */}
+      {/* ctrl+space 누르면 import됨 */}
+      {/* <h2>map</h2> */}
+      {/* <PropsMap arr={arr} />
+      <PropsMap2 arr={arr} />
+      <PropsMap2 /> */}
+      {/* <Alphabet /> */}
+      {/* MAP의 실습문제 */}
+      {/* <MapPrac1 /> */}
+      <MapPrac2 />
     </div>
   );
 }

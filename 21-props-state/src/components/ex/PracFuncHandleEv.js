@@ -58,6 +58,7 @@ export function PracFuncHandleEv3() {
 // 멤버 바꾸기
 export function ChangeObj({ pororoObjArr }) {
   const [num, setNum] = useState(0);
+  // const [state, state변경함수] = useState(state의 초기값);
   const switchMem = () => {
     if (num === pororoObjArr.length - 1) {
       setNum(0);
