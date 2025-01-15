@@ -1,0 +1,39 @@
+@import 'Movingutils';
+
+@for $i from 1 through 3 {
+  @keyframes moving-ball#{$i} {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    25% {
+      transform: translate(#{$i * 10px}, 0);
+    }
+
+    50% {
+      transform: translate(#{$i * 10px}, #{$i * 10px});
+    }
+
+    75% {
+      transform: translate(0px, #{$i * 10px});
+    }
+  }
+}
+
+.container {
+  position: relative;
+
+  .circle {
+    $circleBgColors: (pink, yellow, green);
+    position: absolute;
+
+    @each $el, $index in $circleBgColors {
+      $index: index($circleBgColors, $el);
+      &.circle#{$index} {
+        @include circle($el);
+        animation: moving-ball#{$index} 1.5s ease-in infinite;
+      }
+    }
+  }
+}

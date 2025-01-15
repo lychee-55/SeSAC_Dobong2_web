@@ -104,7 +104,7 @@ h4 {
       // index() : SASS에서 기본적으로 제공하는 함수
       // index(list,value)
       // 특정 list에서 value의 index를 반환하는 함수
-      // index는 1번부터 시작작
+      // index는 1번부터 시작
       $index: index($circleBgColors, $el);
       &:nth-child(#{$index + 3}) {
         @include circle($el, 1.2 - 0.2 * $index);
