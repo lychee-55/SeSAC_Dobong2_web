@@ -125,3 +125,65 @@ h4 {
     }
   }
 }
+
+.img-test {
+  width: 100px;
+  height: 100px;
+  border: 1px solid $color-blue;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &.src-img {
+    background-image: url('../assets/main.png');
+  }
+  &.public-img {
+    background-image: url('http://localhost:3000/images/main.png');
+  }
+}
+.practice {
+  display: flex;
+  > .img-prac {
+    width: 300px;
+    height: 400px;
+    background-color: #a6a6ff;
+    margin: 10px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 6px gray;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    // background-image: url('../assets/practice1.png');
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        background-image: url('../assets/practice#{$i}.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+.practice1 {
+  display: flex;
+  justify-content: space-evenly;
+  div {
+    width: 200px;
+    height: 300px;
+    background-color: #7f8ff5;
+    margin: 50px 0;
+    border-radius: 10%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    box-shadow: $boxShadow;
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        background-image: url('../assets/practice#{$i}.png');
+      }
+    }
+  }
+}
