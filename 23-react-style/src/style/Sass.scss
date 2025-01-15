@@ -1,0 +1,127 @@
+@import 'util';
+
+h4 {
+  color: gray;
+}
+
+.div1 {
+  width: 200px;
+  height: 200px;
+  background-color: $color-red;
+  > .div2 {
+    width: 50%;
+    height: 50%;
+    background-color: $color-orange;
+    .div3 {
+      width: 50%;
+      height: 50%;
+      background-color: $color-yellow;
+    }
+  }
+
+  .btn {
+    // .btn class의 공통속성
+    display: inline-block;
+    transition: 0.4s;
+    width: 33%;
+    height: 40px;
+    color: white;
+    line-height: 40px;
+    text-align: center;
+    font-size: 10px;
+
+    // .btn.orangered
+    &.orangered {
+      background-color: orangered;
+    }
+
+    // .btn--opacity
+    &--opacity {
+      background-color: $color-blue;
+      opacity: 0.5;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    // .btn--blue
+    &--blue {
+      // -이나 _동일함.
+      background-color: $color_blue;
+    }
+
+    &:hover {
+      cursor: pointer;
+      font-weight: 700;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  background-color: antiquewhite;
+  .box1 {
+    height: 50px;
+    background-color: $color-orange;
+
+    // 이전 작성방법
+    // &:nth-child(1) {
+    //   width: 100px;
+    // }
+    // &:nth-child(2) {
+    //   width: 120px;
+    // }
+    // &:nth-child(3) {
+    //   width: 140px;
+    // }
+
+    // for문 - through는 뒷 숫자를 포함, to는 뒷 숫자를 포함 안 함.
+    @for $i from 1 through 3 {
+      // #{}: 보간
+      // 문자 사이에 변수를 넣거나, 연산이 아닌 속에 값을 넣을 때 사용용
+      &:nth-child(#{$i}) {
+        // width: (80px+20px * $i); // 1일때는 20, 2는 40, 3은 60
+        // border: 1px solid $color-blue;
+
+        @include box;
+      }
+    }
+  }
+  .circle {
+    // @include circle(red, 0.5);
+    // &:nth-child(4) {
+    //   @include circle(blue, 0.5);
+    // }
+    // &:nth-child(5) {
+    //   @include circle(dodgerblue, 0.5);
+    // }
+    // &:nth-child(6) {
+    //   @include circle(rgb(255, 175, 255), 0.5);
+    // }
+    $circleBgColors: (blue, dodgerblue, #a6a6ff);
+    @each $el in $circleBgColors {
+      // index값을 바로 접근할 수 없기에:
+      // index() : SASS에서 기본적으로 제공하는 함수
+      // index(list,value)
+      // 특정 list에서 value의 index를 반환하는 함수
+      // index는 1번부터 시작작
+      $index: index($circleBgColors, $el);
+      &:nth-child(#{$index + 3}) {
+        @include circle($el, 1.2 - 0.2 * $index);
+        // @include circle(); ==> util에서 인자값을 주는데 인자값이 없다면 에러가 남.
+      }
+    }
+  }
+
+  .box2 {
+    @include box2();
+
+    // nth-of-type은 tag 중에 몇번째인지 선택
+    &:nth-of-type(4) {
+      @include box2(yellow, 20px, navy);
+    }
+    &:nth-of-type(5) {
+      @include box2(orangered, 30px, black);
+    }
+  }
+}
