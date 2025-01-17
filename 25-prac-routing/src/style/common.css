@@ -1,0 +1,20 @@
+* {
+  margin: 10px 0px;
+}
+
+button {
+  margin: 0px 30px;
+}
+
+.container {
+  background-color: antiquewhite;
+}
+
+.main {
+  display: flex;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+}
